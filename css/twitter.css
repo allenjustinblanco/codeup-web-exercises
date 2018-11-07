@@ -25,13 +25,15 @@ header {
 a {
 	color: var(--link-color);
 }
+.top-class {
+	width: 100%;
+	position: fixed;
+}
 .top-nav {
 	background: var(--light-bg);
 }
 .nav {
 	list-style-type: none;
-	padding: 0;
-	margin: 0;
 }
 .nav-link {
 	color: var(--main-link-color);
@@ -41,8 +43,21 @@ a {
 .nav-link:hover {
 	color: var(--link-color);
 }
+.nav-item {
+	display: inline;
+	padding: 1.5em;
+
+}
 .profile {
 	background: var(--light-bg);
+	height: 80px;
+}
+.profile-image {
+	position: absolute;
+	top: 250px;
+}
+.profile-form {
+	line-height: 80px;
 }
 .btn {
 	border: 1px solid var(--main-link-color);
