@@ -2,3 +2,38 @@
 	color: purple;
 	text-decoration: underline;
 }
+h1 {
+	text-align: center;
+	text-decoration: underline;
+	color: teal;
+}
+h2{
+	text-decoration: underline;
+	color: teal;
+}
+html{
+	background-image: url(../img/light-grey-terrazzo.png);
+	font-family: "Josefin Sans";
+}
+ul li {
+	list-style-type: circle;
+}
+tr td {
+	margin: 15px;
+	padding: 0;
+	width: 300px;
+	text-align: center;
+}
+table {
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+}
+th {
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+}
+a {
+
+}
