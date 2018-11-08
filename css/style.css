@@ -7,7 +7,12 @@ h1 {
 	text-decoration: underline;
 	color: teal;
 }
-h2{
+a:hover {
+	color: purple;
+}
+}
+
+h2 {
 	text-decoration: underline;
 	color: teal;
 }
@@ -28,12 +33,15 @@ table {
 	border-style: solid;
 	border-color: black;
 	border-width: 1px;
+	margin: auto;
 }
 th {
 	border-style: solid;
 	border-color: black;
 	border-width: 1px;
 }
-a {
-
+img:hover {
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
 }

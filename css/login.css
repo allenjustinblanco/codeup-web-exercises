@@ -60,9 +60,8 @@ fieldset {
 	/* You'll need to use the `calc` function to make the width of this element match the width of the button */
 	/* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
 	/* HINT: Calculate based on the padding of the `.btn` class */
-	width: calc(100% - 6px)
+	width: calc(100% - 4px)
 }
-
 .btn {
 	/* There must be a separation of 8px between the text and the border of this element */
 	/* The text color of this element should be white and bold */
