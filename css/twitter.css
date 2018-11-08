@@ -86,17 +86,17 @@ a {
 	color: var(--main-link-color);
 }
 .profile-details {
-	width: 25%;
+	width: calc(25% - 1em);
 	margin: .5em 0;
 	float: left;
 }
 .timeline {
-	width: 50%;
+	width: calc(50% - 1em);
 	margin: .5em 0;
 	float: left;
 }
 .who-to-follow {
-	width: 25%;
+	width: calc(25% - 1em);
 	margin: .5em 0;
 	float: right;
 }
@@ -116,7 +116,7 @@ a {
 	float: left;
 }
 .media-body {
-	width: calc(100% - 42px);
+	width: calc(100% - 50px);
 	float: right;
 }
 .profile-items {
