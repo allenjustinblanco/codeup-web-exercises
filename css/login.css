@@ -1,6 +1,7 @@
 * {
 	padding: 0;
 	margin: 0;
+	/*box sizing: border-box;*/
 }
 
 body, html {
@@ -46,7 +47,7 @@ fieldset {
 
 .form-label {
 	/* The text of a label must be bold */
-	text-decoration: bold;
+	font-weight: bold;
 }
 
 .form-control {
@@ -54,8 +55,8 @@ fieldset {
 	/* It should have a separation of .5em from elements on top of it and below it */
 	margin-top: .5em;
 	margin-bottom: .5em;
-	padding-bottom: 3.5px;
-	padding-top: 3.5px;
+	padding-bottom: 4px;
+	padding-top: 4px;
 
 	/* You'll need to use the `calc` function to make the width of this element match the width of the button */
 	/* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
@@ -68,12 +69,9 @@ fieldset {
 	/* The border of this element should be 1px, and its color should be light grey */
 	background-color: #0fb784;
 	padding: 8px;
-	text-decoration: bold;
+	font-weight: bold;
 	color: white;
-	border-style: solid;
-	border-color: "lightgrey";
-	border-width: 1px;
-
+	border: solid grey 1px;
 }
 
 .btn-block {
