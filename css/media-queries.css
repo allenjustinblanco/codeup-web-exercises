@@ -3,7 +3,19 @@ body {
     box-sizing: border-box;
 }
 ul {
-    margin-left: 50px;
+    margin-left: 900px;
+}
+h1 {
+    width: 25%;
+    margin: 0;
+    float:left;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 890px;
+    height: 385px;
 }
 .alert-info {
     visibility: hidden;
@@ -12,14 +24,9 @@ ul {
 .nav-links li {
     list-style-type: none;
     padding: 0;
-    float:left;
-    margin: 2em;
+    margin: 15px;
     display: inline;
-}
-img {
-    margin: 0 auto;
-    width: 890px;
-    height: 395px;
+    text-align: right;
 }
 .main {
     float: left;
@@ -28,9 +35,4 @@ img {
 .sub-section {
     float: right;
     width: 50%;
-}
-h1 {
-    width: 25%;
-    margin: 0;
-    float:left;
 }
