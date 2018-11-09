@@ -2,7 +2,7 @@
     background-image: url("../img/pizza.png");
 }
 h1 {
-
+    margin: 0 auto;
 }
 @media screen and (min-width: 500px) {
     selector {
