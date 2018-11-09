@@ -3,7 +3,8 @@ body {
     box-sizing: border-box;
 }
 ul {
-    margin-left: 900px;
+    position: absolute;
+    right: 10px;
 }
 h1 {
     width: 25%;
