@@ -4,7 +4,7 @@
         margin: 1% 2%;
     }
     ul {
-
+        padding: 0;
     }
     h1 {
         font-size: 3em;
@@ -61,7 +61,7 @@
     }
 
     .alert-info {
-        visibility: hidden;
+        display: none;
     }
 
     .nav-links li {
