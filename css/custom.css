@@ -4,6 +4,9 @@
 h1 {
     margin: 0 auto;
 }
+.card {
+    margin: 10px 15px;
+}
 @media screen and (min-width: 500px) {
     selector {
         property: value;
