@@ -8,7 +8,14 @@ h1 {
     background-color: whitesmoke;
 }
 .card {
-    margin: 5px;
+    margin: 0px;
+}
+.container {
+    width: 100%;
+    margin: 0;
+}
+section{
+    margin: 10px;
 }
 @media screen and (min-width: 500px) {
     selector {
