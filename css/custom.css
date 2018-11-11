@@ -5,7 +5,8 @@
 h1 {
     text-align: center;
     margin: auto;
-    background-color: white;
+    background-color: #E6ECF0;
+    width: 100%;
 }
 @media screen and (min-width: 500px) {
     selector {
