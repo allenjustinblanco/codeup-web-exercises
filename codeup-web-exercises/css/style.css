@@ -1,0 +1,52 @@
+.fancy-header {
+	color: purple;
+	text-decoration: underline;
+}
+* {
+	box-sizing: border-box;
+}
+h1 {
+	text-align: center;
+	text-decoration: underline;
+	color: teal;
+}
+a:hover {
+	color: purple;
+}
+
+h2 {
+	text-decoration: underline;
+	color: teal;
+}
+html{
+	background-image: url(../img/light-grey-terrazzo.png);
+	font-family: "Josefin Sans";
+}
+ul li {
+	list-style-type: circle;
+}
+tr td {
+	margin: 15px;
+	padding: 0;
+	width: 300px;
+	text-align: center;
+}
+table {
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	margin: auto;
+}
+th {
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+}
+img {
+	width: 50%;
+	height: 50%;
+	margin: 0;
+}
+.float-right {
+	float: right;
+}
