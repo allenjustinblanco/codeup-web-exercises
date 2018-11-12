@@ -1,7 +1,3 @@
-.jumbotron {
-    background-image: url("../img/pizza.png");
-    margin: 0;
-}
 h1 {
     text-align: center;
     margin: auto;
@@ -13,6 +9,10 @@ h1 {
 }
 section {
     margin: 10px;
+}
+.jumbotron {
+    background-image: url("../img/pizza.png");
+    margin: 0;
 }
 .form-group {
     margin: 15px;
@@ -31,7 +31,7 @@ section {
     float: right;
 }
 .margin-top {
-    margin-top: 10px;
+    margin: 10px 0;
 }
 .checkout::after {
     content: "";
@@ -39,8 +39,8 @@ section {
 .card-grey {
     background-color: #ebf0f4;
 }
-@media screen and (min-width: 500px) {
-    selector {
-        property: value;
+@media screen and (min-width: 768px) {
+    .jumbotron, .form-group, .card, .card-margin, .margin-top, .card-grey {
+        width: 100%;
     }
 }
