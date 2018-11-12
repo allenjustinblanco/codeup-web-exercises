@@ -5,8 +5,39 @@
 h1 {
     text-align: center;
     margin: auto;
-    background-color: #E6ECF0;
+    background: #E6ECF0;
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    opacity: 0.5;
     width: 100%;
+}
+section {
+    margin: 10px;
+}
+.form-group {
+    margin: 15px;
+}
+.card {
+    width: 100%;
+}
+.card-margin {
+    margin: 5px;
+}
+.list-group-item-info {
+    background: #d3f4ff;
+    color: #7eb2dd;
+}
+.float-right {
+    float: right;
+}
+.margin-top {
+    margin-top: 10px;
+}
+.checkout::after {
+    content: "";
+}
+.card-grey {
+    background-color: #ebf0f4;
 }
 @media screen and (min-width: 500px) {
     selector {
