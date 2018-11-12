@@ -19,8 +19,6 @@
 .column {
     float: left;
     padding: 10px;
-    border: black solid 1px;
-    background-color: #3B94D9;
 }
 .column.one-half {
     width: 50%;
@@ -48,6 +46,9 @@
 }
 .column.three-sixth {
     width: 50%;
+}
+.column.one-fifth {
+    width: 20%;
 }
 .offset-one-half {
     margin: 50%;
