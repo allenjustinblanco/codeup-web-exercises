@@ -63,14 +63,16 @@
                     <div class="card-body">
                         <p class="card-text">Garlic-seasoned crust with a rich, buttery taste.</p>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item list-group-item-info"><input type="radio" name="q1" value="small" id="small">
-                            <label for="small">Small(10")</label>
-                        </li>
-                        <li class="list-group-item list-group-item-info"><input type="radio" name="q1" value="medium">
-                            <label for="medium">Medium(12")</label>
-                        </li>
-                    </ul>
+                    <form>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item list-group-item-info"><input type="radio" name="q1" value="small" id="small">
+                                <label for="small">Small(10")</label>
+                            </li>
+                            <li class="list-group-item list-group-item-info"><input type="radio" name="q1" value="medium" id="medium1">
+                                <label for="medium1">Medium(12")</label>
+                            </li>
+                        </ul>
+                    </form>
                 </div>
             </section>
             <section>
@@ -97,7 +99,7 @@
                 </div>
             </div>
             <div class="card">
-                <div class="card-header list-group-item-info" id="Cheesesauce">
+                <div class="card-header list-group-item-info" id="CheeseSauce">
                     Choose Cheese and Sauce
                 </div>
                 <section>
@@ -106,8 +108,8 @@
                             Cheese
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Cheese</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <label for="FormControlSelect1">Cheese</label>
+                            <select class="form-list form-control" id="FormControlSelect1">
                                 <option>Light</option>
                                 <option>Normal</option>
                                 <option>Extra</option>
@@ -122,8 +124,8 @@
                             Sauce
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlSelect2">What type?</label>
-                            <select class="form-control" id="exampleFormControlSelect2">
+                            <label for="FormControlSelect2">What type?</label>
+                            <select class="form-list form-control" id="FormControlSelect2">
                                 <option>Tomato sauce</option>
                                 <option>Marinara sauce</option>
                                 <option>BBQ sauce</option>
@@ -131,8 +133,8 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlSelect3">How much?</label>
-                            <select class="form-control" id="exampleFormControlSelect3">
+                            <label for="FormControlSelect3">How much?</label>
+                            <select class="form-list form-control" id="FormControlSelect3">
                                 <option>Light</option>
                                 <option>Normal</option>
                                 <option>Extra</option>
@@ -153,7 +155,7 @@
                     </div>
                     <section>
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-header list-group-item-info">
                                 Choose Meats
                             </div>
                             <div class="form-check form-group">
@@ -176,7 +178,7 @@
                     </section>
                     <section>
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-header list-group-item-info">
                                 Choose Non-Meats
                             </div>
                             <div class="form-check form-group">
@@ -202,6 +204,7 @@
                             <a href="#" class="btn btn-primary float-right checkout">Checkout</a>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </main>
