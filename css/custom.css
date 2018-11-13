@@ -1,11 +1,9 @@
 h1 {
     text-align: center;
-    margin: auto;
     background: #E6ECF0;
     filter:alpha(opacity=50);
     -moz-opacity:0.5;
     opacity: 0.5;
-    width: 100%;
 }
 section {
     margin: 10px;
