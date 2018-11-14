@@ -1,42 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-h1 {
-    padding-top: .5em;
-    font-family: 'Abel', sans-serif;
-}
-a  {
-    padding: .5em;
-}
-body {
-    margin: 1% 2%;
-}
-h2, h3 {
-    font-family: 'Anton', sans-serif;
-}
-h6 {
-    font-family: 'Abel', sans-serif;
-}
-p {
-    margin-top: 42px;
-}
-.logo-img {
-    margin-top: -2.0em;
-    margin-bottom: -2.0em;
-}
-.my-header {
-    background-color: lightgrey;
-    padding: 1em;
-}
-.my-row {
-    background-color: lightgrey;
-}
-.my-container {
-    background-color: lightgrey;
-}
-div>.circle {
-    padding: 0;
-}
 .circle {
     border-radius: 50%;
     width: 8em;
@@ -61,29 +22,60 @@ div>.circle {
     text-align: center;
     color: white;
 }
-.circle-words {
-
+.my-container {
+    background-color: lightgrey;
 }
-.main-img {
-
+.my-row {
+    background-color: lightgrey;
 }
-/* unvisited link */
+.my-header {
+    background-color: lightgrey;
+    padding: 1em;
+}
 a:link {
     color: black;
     font-family: 'Abel', sans-serif;
 }
-
-/* visited link */
 a:visited {
     color: black;
 }
-
-/* mouse over link */
 a:hover {
     color: black;
 }
-
-/* selected link */
 a:active {
     color: blue;
+}
+p {
+    margin-top: 42px;
+}
+body {
+    margin: 1% 2%;
+    display: inline-block;
+}
+* {
+    box-sizing: border-box;
+    justify-content: center;
+}
+h2, h3 {
+    font-family: 'Anton', sans-serif;
+}
+h6 {
+    font-family: 'Abel', sans-serif;
+}
+h1 {
+    padding-top: .5em;
+    font-family: 'Abel', sans-serif;
+}
+a  {
+    padding: .5em;
+}
+.logo-img {
+    margin-top: -2.0em;
+    margin-bottom: -2.0em;
+}
+div>.circle {
+    padding: 0;
+}
+@media screen and (max-width: 576px){
+
 }
