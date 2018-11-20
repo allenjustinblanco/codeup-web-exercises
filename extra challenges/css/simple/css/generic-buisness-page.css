@@ -4,7 +4,17 @@
 body {
     font-family: Lato, sans-serif;
 }
+footer {
+    background-color: #848487;
+    text-align: center;
+}
+.logo {
+    width: 2em;
+    height: 2em;
+    display: inline;
+}
 .jumbotron {
     text-align: center;
     font-family: Montserrat, sans-serif;
 }
+

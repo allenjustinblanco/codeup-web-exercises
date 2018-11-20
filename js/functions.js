@@ -25,7 +25,7 @@ console.log(helloMessage);
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-var myName = sayHello(Justin);
+var myName = sayHello('Justin');
 console.log(myName);
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -68,8 +68,8 @@ console.log(isTwo());
  * > calculateTip(0.25, 25.50) // returns 6.37
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-function calculateTip(tipPercentage, totalbill) {
-    return tipPercentage * totalbill;
+function calculateTip(tipPercentage, totalBill) {
+    return totalBill - parseFloat(tipPercentage);
 }
 /**
  * TODO:
@@ -93,6 +93,8 @@ alert('You should tip ' + calculateTip());
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
-function applyDiscount(price) {
-    var originalprice
+function applyDiscount(originalPrice, discountedPercent) {
+    var discount = (originalPrice * discountedPercent)
+    var discountedPrice = (originalPrice - discount)
+    return discount
 }
