@@ -16,24 +16,26 @@
  * Can you refactor your code to use functions?
  */
 var userInput = confirm('Would you like to enter a number? If so press OK');
+function isOdd(num) {
+    return num % 2;
+}
 if (userInput) {
     var num = prompt('Enter a number');
-}
-var isOdd = function isOdd(num) {
-    return num % 2;
-};
-if (isOdd(num)){
-    alert('number is odd');
+    if (isOdd(num)) {
+        alert('number is odd');
+    } else {
+        alert('number is even');
+    }
+    if (parseInt(num)) {
+        alert('Your number plus 100 is ' + (parseInt(num) + 100));
+    }
+    if (num > 0) {
+        alert('The number ' + num + ' is positive.');
+    } else {
+        alert('The number ' + num + ' is negative.')
+    }
 } else {
-    alert('number is even');
-}
-if (parseInt(num)){
-    alert('Your number plus 100 is ' + (parseInt(num) + 100));
-}
-if (num > 0) {
-    alert('The number ' + num + ' is positive.');
-} else {
-    alert('The number ' + num + ' is negative.')
+    alert('Okay, you dont want to input a number. Have a nice day...')
 }
 /* ########################################################################## */
 
@@ -75,7 +77,7 @@ function analyzeColor() {
             alert("blue is the color of the ocean.");
             break;
         case "indigo":
-            alert("indigo, that's so specific lol.");
+            alert("I don't know anything that's the color indigo LOL.");
             break;
         case "violet":
             alert("violet is a really cool color!");
@@ -134,26 +136,26 @@ var numbers = ['0', '1', '2', '3', '4', '5'];
 var luckyNumber = numbers[Math.floor(Math.random() * numbers.length)];
 var priceofitem = prompt('Enter the price of the item you are purchasing below.');
 
-    confirm("Press OK to receive a number and enter to win a discounted price on any item in the store!");
+confirm("Press OK to receive a number and enter to win a discounted price on any item in the store!");
 switch(luckyNumber) {
     case '0':
-        alert('Unfortunately your number is ' + luckyNumber + ' , so no discount is going to be applied.');
+        alert('Unfortunately your number is $' + luckyNumber + ' , so no discount is going to be applied.');
         break;
     case '1':
         alert("Your number is " + luckyNumber + ' so you will receive a 10% discount!');
-        alert('Your final price comes out to ' + (parseInt(priceofitem) * .90) + '!');
+        alert('Your final price comes out to $' + (parseInt(priceofitem) * .90).toFixed(2) + '!');
         break;
     case '2':
         alert("Your number is " + luckyNumber + ' so you will receive a 25% discount!');
-        alert('Your final price comes out to ' + (parseInt(priceofitem) * .75) + '!');
+        alert('Your final price comes out to $' + (parseInt(priceofitem) * .75).toFixed(2) + '!');
         break;
     case '3':
         alert("Your number is " + luckyNumber + ' so you will receive a 35% discount!');
-        alert('Your final price comes out to ' + (parseInt(priceofitem) * .65) + '!');
+        alert('Your final price comes out to $' + (parseInt(priceofitem) * .65).toFixed(2) + '!');
         break;
     case '4':
         alert("Your number is " + luckyNumber + ' so you will receive a 50% discount!');
-        alert('Your final price comes out to ' + (parseInt(priceofitem) * .50) + '!');
+        alert('Your final price comes out to $' + (parseInt(priceofitem) * .50).toFixed(2) + '!');
         break;
     case '5':
         alert("Your number is " + luckyNumber + ' so you will receive a 100% discount!');

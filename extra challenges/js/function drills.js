@@ -126,11 +126,11 @@ function half(n) {
 }
 // Write a function named subtract(a, b) that returns a minus b
 function substract(a,b) {
-
+    return a - b;
 }
 // Write a function named multiply(a, b) that returns the product of a times b
 function multiply(a, b) {
-
+    return a * b;
 }
 // Write a function named divide(a, b) that returns a divided by b
 function divide(a, b) {
