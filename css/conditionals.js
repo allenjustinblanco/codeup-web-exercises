@@ -15,20 +15,17 @@
  *
  * Can you refactor your code to use functions?
  */
+
 var userInput = confirm('Would you like to enter a number? If so press OK');
 if (userInput) {
     var num = prompt('Enter a number');
+    num();
 }
-var isOdd = function isOdd(num) {
-    return num % 2;
-};
+function isOdd(num) { return num % 2;}
 
-if (num){
-    alert(isOdd(num));
-    alert('Your number plus 100 is ' + parseInt(num) + parseInt('100'));
+if (num(Boolean)){
+
 }
-/* ########################################################################## */
-
 /**
  * TODO:
  * Create a function named `analyzeColor` that accepts a string that is a color
