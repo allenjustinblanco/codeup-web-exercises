@@ -22,10 +22,18 @@ if (userInput) {
 var isOdd = function isOdd(num) {
     return num % 2;
 };
-
-if (num){
-    alert(isOdd(num));
-    alert('Your number plus 100 is ' + parseInt(num) + parseInt('100'));
+if (isOdd(num)){
+    alert('number is odd');
+} else {
+    alert('number is even');
+}
+if (parseInt(num)){
+    alert('Your number plus 100 is ' + (parseInt(num) + 100));
+}
+if (num > 0) {
+    alert('The number ' + num + ' is positive.');
+} else {
+    alert('The number ' + num + ' is negative.')
 }
 /* ########################################################################## */
 
@@ -46,20 +54,49 @@ if (num){
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-
+var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+var randomColor = colors[Math.floor(Math.random() * colors.length)];
+function analyzeColor() {
+    var colorpreference = prompt("What is your favorite color? choose one of the following: red, orange, yellow, green, blue, indigo, or violet.");
+    switch(colorpreference) {
+        case "red":
+            alert("What a coincidence, my blood is that color!");
+            break;
+        case "orange":
+            alert("orange is the color of the oranges on a summer day.");
+            break;
+        case "yellow":
+            alert("yellow is the color of a sunflower.");
+            break;
+        case "green":
+            alert("green is the color of grass.");
+            break;
+        case "blue":
+            alert("blue is the color of the ocean.");
+            break;
+        case "indigo":
+            alert("indigo, that's so specific lol.");
+            break;
+        case "violet":
+            alert("violet is a really cool color!");
+            break;
+        default:
+            alert(colorpreference + " isn't an option...");
+            break;
+    }
+}
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color everytime the page loads)
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message everytime you refresh the page
  */
-
+console.log(analyzeColor(randomColor));
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
@@ -93,6 +130,39 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+var numbers = ['0', '1', '2', '3', '4', '5'];
+var luckyNumber = numbers[Math.floor(Math.random() * numbers.length)];
+var priceofitem = prompt('Enter the price of the item you are purchasing below.');
+
+    confirm("Press OK to receive a number and enter to win a discounted price on any item in the store!");
+switch(luckyNumber) {
+    case '0':
+        alert('Unfortunately your number is ' + luckyNumber + ' , so no discount is going to be applied.');
+        break;
+    case '1':
+        alert("Your number is " + luckyNumber + ' so you will receive a 10% discount!');
+        alert('Your final price comes out to ' + (parseInt(priceofitem) * .90) + '!');
+        break;
+    case '2':
+        alert("Your number is " + luckyNumber + ' so you will receive a 25% discount!');
+        alert('Your final price comes out to ' + (parseInt(priceofitem) * .75) + '!');
+        break;
+    case '3':
+        alert("Your number is " + luckyNumber + ' so you will receive a 35% discount!');
+        alert('Your final price comes out to ' + (parseInt(priceofitem) * .65) + '!');
+        break;
+    case '4':
+        alert("Your number is " + luckyNumber + ' so you will receive a 50% discount!');
+        alert('Your final price comes out to ' + (parseInt(priceofitem) * .50) + '!');
+        break;
+    case '5':
+        alert("Your number is " + luckyNumber + ' so you will receive a 100% discount!');
+        alert('Your item is 100% free!!');
+        break;
+    default:
+        alert(luckyNumber + " isn't an option...");
+        break;
+}
 
 /**
  * TODO:
@@ -103,3 +173,4 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 // Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
+
