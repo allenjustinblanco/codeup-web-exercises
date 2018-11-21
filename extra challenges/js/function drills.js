@@ -1,21 +1,33 @@
 // Make a function named isOdd(number)
-// Make a function named isEven(number)
-var isOdd = function isOdd(number) {
-    return num % 2;
-};
-if (isOdd(number)){
-    alert('number is odd');
-} else {
-    alert('number is even');
+function isOdd(input) {
+  var remainder = input % 2;
+  if (remainder === 1) {
+    return true;
+  } else {
+    return false;
+  }
 }
-
+// Make a function named isEven(number)
+function isEven(input) {
+    var remainder = input % 2;
+    if (remainder === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
 // Make a function named identity(input) that returns the input exactly as provided.
 function identity(input) {
     return input;
 }
 // Make a function named isFive(input)
 function isFive(input) {
-    input = 5;
+  var output = input === 5;
+  if (output) {
+    console.log(input + ' is in fact five.');
+  } else {
+    console.log(input + ' is not five...');
+  }
 }
 // Make a function named addFive(input) that adds five to some input.
 function addFive(input) {
@@ -44,25 +56,33 @@ function isMultipleOfThree(input) {
 }
 // Make a function named isMultipleOfThreeAndFive(input)
 function isMultipleOfThreeAndFive(input) {
-    switch (input) {
-        case (input % 3 === 0) && (input % 5 === 0):
-            alert(input + ' is a multiple of three and five.');
-            break;
-        default:
-            alert(input + ' is not a multiple of three and five.')
-    }
+  if ((input % 3 === 0)&&(input % 5 === 0)) {
+    console.log(input + ' is a multiple of three and five.');
+  } else {
+    console.log(input + ' is not a multiple of three and five.');
+  }
 }
 // Make a function named isMultipleOf(target, n) which checks if target is evenly divisible by n
 function isMultipleOf(target, n) {
-
+  if (target % n === 0) {
+    console.log(target + ' is a multiple of ' + n);
+  }
 }
 // Make a function named isTrue(boolean)
 function isTrue(boolean) {
-
+  if (boolean === true) {
+    console.log(boolean + ' is true.');
+  } else {
+    console.log(boolean + ' is false.');
+  }
 }
 // Make a function named isFalse(boolean)
 function isFalse(boolean) {
-
+  if (boolean === false) {
+    console.log(boolean + ' is false.');
+  } else {
+    console.log(boolean + ' is true.');
+  }
 }
 // Make a function named isTruthy(input), remember that values other than true will behave like true
 function isTruthy(input) {
@@ -106,11 +126,11 @@ function notZero(input) {
 }
 // Write a function named lowerCase(string)
 function lowerCase(string) {
-
+  string.toLowercase;
 }
 // Write a function named double(n) that returns a number times two
 function double(n) {
-
+  return n;
 }
 // Write a function named triple(n) that returns a number times 3
 function triple(n) {
@@ -134,11 +154,11 @@ function multiply(a, b) {
 }
 // Write a function named divide(a, b) that returns a divided by b
 function divide(a, b) {
-
+  return a / b;
 }
 // Write a function named remainder(a, b) that returns the remainder after dividing a by b
 function remainder(a, b) {
-
+  return a % b;
 }
 // Make a function named modulo(a, b) that returns the returns the remainder after dividing a by b
 function modulo(a, b) {
