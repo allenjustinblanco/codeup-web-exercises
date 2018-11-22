@@ -108,11 +108,11 @@ function isCapital(letter) {
 }
 // Make a function named isLowerCase(letter)
 function isLowerCase(letter) {
-
+  return letter.lowerCase;
 }
 // Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
 function hasLowerCase(string) {
-
+  if (string)
 }
 // Make a function named isSpace(letter) that returns if a character is a space character
 function isSpace(letter) {
@@ -120,11 +120,19 @@ function isSpace(letter) {
 }
 // Make a function named isZero(number)
 function isZero(number) {
-
+  if (number === 0) {
+    return (number + ' is zero')
+  } else {
+    return (number + ' is not zero')
+  }
 }
 // Make a function named notZero(input) that returns true if the input is not zero
 function notZero(input) {
-
+  if (number !=== 0) {
+    return (number + ' is not zero')
+  } else {
+    return (number + ' is zero')
+  }
 }
 // Write a function named lowerCase(string)
 function lowerCase(string) {
@@ -132,19 +140,19 @@ function lowerCase(string) {
 }
 // Write a function named double(n) that returns a number times two
 function double(n) {
-  return n;
+  console.log(n, n);
 }
 // Write a function named triple(n) that returns a number times 3
 function triple(n) {
-
+  console.log(n, n, n);
 }
 // Write a function named quadruple(n) that returns a number times 4
 function quadruple(n) {
-
+  console.log(n, n, n, n);
 }
 // Write a function named half(n) that returns 1/2 of the provided input
 function half(n) {
-
+  return n / 2;
 }
 // Write a function named subtract(a, b) that returns a minus b
 function substract(a,b) {
@@ -196,7 +204,11 @@ function isBlank(input) {
 }
 // Make a function named areIdentical(input1, input2) that returns if both inputs are same value and data type.Make a function named not(input) returns the input with a flipped boolean
 function areIdentical(input1, input2) {
-
+  if (input1 === input2) {
+    return ('Both inputs are identical');
+  } else {
+    return ('Both inputs are not identical');
+  }
 }
 // Make a function named notNot(input) that the negation of the negation of the input.Make a function named and(predicate1, predicate2) that returns the logical operation of AND
 function notNot(input) {
