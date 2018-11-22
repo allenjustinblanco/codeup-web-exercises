@@ -93,8 +93,10 @@ function isFalsy(input) {
 
 }
 // Make a function named isVowel(letter)
-function isVowel(letter) {
-
+function isVowel(x) {
+    var result;
+    result = x == "A" || x == "E" || x == "I" || x == "O" || x == "U";
+    return result;
 }
 // Make a function named isConsonant(letter)
 function isConsonant(letter) {
@@ -162,27 +164,27 @@ function remainder(a, b) {
 }
 // Make a function named modulo(a, b) that returns the returns the remainder after dividing a by b
 function modulo(a, b) {
-
+  return a % b;
 }
 // Write a function named cube(n) that returns n * n * n
 function cube(n) {
-
+  return n * n * n;
 }
 // Write a function named squareRoot(n) that returns the square root of the input
 function squareRoot(n) {
-
+  return Math.sqrt(n);
 }
 // Write a function named cubeRoot(n) that returns the cube root of the input
 function cubeRoot(n) {
-
+  return Math.cbrt(n);
 }
 // Write a function named invertSign(number) that returns a negative version of a postive number, a positve version of negative, and false for all else.
 function invertSign(number) {
-
+  return x *= -1;
 }
 // Write a function named degreesToRadians(number)
 function degreesToRadians(number) {
-
+  return angle * (180 / Math.PI);
 }
 // Write a function named radiansToDegrees(number)
 function radiansToDegrees(number) {
