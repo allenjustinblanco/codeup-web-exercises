@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>javascript calculator</title>
-</head>
-<body>
 
+<head>
+  <meta charset="UTF-8">
+  <title>javascript calculator</title>
+</head>
+
+<body>
+  <form>
+    Value 1: <input id="value1" type="text">
+    Value 2: <input id="value2" type="text">
+    Operator:
+    <select id="Operator">
+      <option value="add">add</option>
+      <option value="min">minus</option>
+      <option value="mul">multiply</option>
+      <option value="div">divide</option>
+    </select>
+    <button type="button" onclick="calc()">Calculate</button>
+  </form>
+
+  <div id='result'></div>
+  <script src="js/calc.js"></script>
 </body>
+
 </html>
