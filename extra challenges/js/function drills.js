@@ -86,11 +86,19 @@ function isFalse(boolean) {
 }
 // Make a function named isTruthy(input), remember that values other than true will behave like true
 function isTruthy(input) {
-
+ if (input === (undefined || null || 0 || '' || NaN)) {
+     console.log(input + ' is not Truthy');
+ } else {
+     console.log(input + ' is Truthy');
+ }
 }
 // Make a function named isFalsy(input), remember that values other than false behave like false
 function isFalsy(input) {
-
+    if (input === (undefined || null || 0 || '' || NaN)) {
+        console.log(input + ' is Falsy');
+    } else {
+        console.log(input + ' is not Falsy');
+    }
 }
 // Make a function named isVowel(letter)
 function isVowel(x) {
@@ -128,7 +136,7 @@ function isZero(number) {
 }
 // Make a function named notZero(input) that returns true if the input is not zero
 function notZero(input) {
-  if (number !=== 0) {
+  if (number !== 0) {
     return (number + ' is not zero')
   } else {
     return (number + ' is zero')
@@ -136,7 +144,7 @@ function notZero(input) {
 }
 // Write a function named lowerCase(string)
 function lowerCase(string) {
-  string.toLowercase;
+  console.log(string.toLowercase);
 }
 // Write a function named double(n) that returns a number times two
 function double(n) {
