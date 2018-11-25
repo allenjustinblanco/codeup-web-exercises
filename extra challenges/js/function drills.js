@@ -101,14 +101,21 @@ function isFalsy(input) {
     }
 }
 // Make a function named isVowel(letter)
-function isVowel(x) {
-    var result;
-    result = x == "A" || x == "E" || x == "I" || x == "O" || x == "U";
-    return result;
+function isVowel(letter) {
+    var output = letter.toString().toLowerCase();
+    if (output === ("a" || "e" || "i" || "o" || "u")){
+        console.log(letter + ' is a Vowel.');
+    } else {
+        console.log(letter + ' is not a Vowel.');
+    }
 }
 // Make a function named isConsonant(letter)
 function isConsonant(letter) {
-
+    if (letter = ("a" || "e" || "i" || "o" || "u")){
+        console.log(letter + ' is not a consonant.');
+    } else {
+        console.log(letter + ' is a consonant.');
+    }
 }
 // Make a function named isCapital(letter)
 function isCapital(letter) {
@@ -116,7 +123,7 @@ function isCapital(letter) {
 }
 // Make a function named isLowerCase(letter)
 function isLowerCase(letter) {
-  return letter.lowerCase;
+  return letter.toLowerCase();
 }
 // Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
 function hasLowerCase(string) {
