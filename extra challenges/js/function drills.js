@@ -24,9 +24,9 @@ function identity(input) {
 function isFive(input) {
   var output = input === 5;
   if (output) {
-    console.log(input + ' is in fact five.');
+    return (input + ' is in fact five.');
   } else {
-    console.log(input + ' is not five...');
+    return (input + ' is not five...');
   }
 }
 // Make a function named addFive(input) that adds five to some input.
@@ -36,14 +36,19 @@ function addFive(input) {
 // Make a function named isMultipleOfFive(input)
 function isMultipleofFive(input) {
     if (input % 5 === 0) {
-        alert(input + ' is a multiple of 5.')
+        return(input + ' is a multiple of 5.')
     } else {
-        alert(input + ' is not a multiple of 5.')
+        return (input + ' is not a multiple of 5.')
     }
 }
 // Make a function named isThree(input)
 function isThree(input) {
-    input = 3;
+    var output = input === 3;
+    if (output) {
+        console.log(input + ' is in fact five.');
+    } else {
+        console.log(input + ' is not five...');
+    }
 }
 // Make a function named isMultipleOfThree(input)
 function isMultipleOfThree(input) {
@@ -123,11 +128,15 @@ function isCapital(letter) {
 }
 // Make a function named isLowerCase(letter)
 function isLowerCase(letter) {
-  return letter.toLowerCase();
+  if (letter = letter.toLowerCase()){
+      return (letter + ' is lowercase')
+  } else {
+      return (letter + ' is not lowercase')
+  }
 }
 // Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
 function hasLowerCase(string) {
-  if (string)
+
 }
 // Make a function named isSpace(letter) that returns if a character is a space character
 function isSpace(letter) {
@@ -143,27 +152,27 @@ function isZero(number) {
 }
 // Make a function named notZero(input) that returns true if the input is not zero
 function notZero(input) {
-  if (number !== 0) {
-    return (number + ' is not zero')
+  if (input !== 0) {
+    return (input + ' is not zero')
   } else {
-    return (number + ' is zero')
+    return (input + ' is zero')
   }
 }
 // Write a function named lowerCase(string)
 function lowerCase(string) {
-  console.log(string.toLowercase);
+  return (string.toLowercase);
 }
 // Write a function named double(n) that returns a number times two
 function double(n) {
-  console.log(n, n);
+  return (n, n);
 }
 // Write a function named triple(n) that returns a number times 3
 function triple(n) {
-  console.log(n, n, n);
+  return (n, n, n);
 }
 // Write a function named quadruple(n) that returns a number times 4
 function quadruple(n) {
-  console.log(n, n, n, n);
+  return (n, n, n, n);
 }
 // Write a function named half(n) that returns 1/2 of the provided input
 function half(n) {
@@ -224,6 +233,13 @@ function areIdentical(input1, input2) {
   } else {
     return ('Both inputs are not identical');
   }
+}
+function not(input){
+    if (input = true) {
+        return input = false;
+    } else {
+        return input = true;
+    }
 }
 // Make a function named notNot(input) that the negation of the negation of the input.Make a function named and(predicate1, predicate2) that returns the logical operation of AND
 function notNot(input) {
