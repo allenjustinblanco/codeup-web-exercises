@@ -10,7 +10,7 @@ function calc() {
     calculate = a - b;
   } else if (op == 'mul') {
     calculate = a * b;
-  } else (op == 'div') {
+  } else(op == 'div') {
     calculate = a / b;
   }
 

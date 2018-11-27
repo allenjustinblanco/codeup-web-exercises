@@ -1,20 +1,10 @@
 // Make a function named isOdd(number)
 function isOdd(input) {
-  var remainder = input % 2;
-  if (remainder === 1) {
-    return true;
-  } else {
-    return false;
-  }
+    return parseFloat(input) % 2 === 1;
 }
 // Make a function named isEven(number)
 function isEven(input) {
-    var remainder = input % 2;
-    if (remainder === 0) {
-        return true;
-    } else {
-        return false;
-    }
+    return parseFloat(input) % 2 === 0;
 }
 // Make a function named identity(input) that returns the input exactly as provided.
 function identity(input) {
@@ -22,12 +12,7 @@ function identity(input) {
 }
 // Make a function named isFive(input)
 function isFive(input) {
-  var output = input === 5;
-  if (output) {
-    console.log(input + ' is in fact five.');
-  } else {
-    console.log(input + ' is not five...');
-  }
+    return input === 5;
 }
 // Make a function named addFive(input) that adds five to some input.
 function addFive(input) {
@@ -35,68 +20,43 @@ function addFive(input) {
 }
 // Make a function named isMultipleOfFive(input)
 function isMultipleofFive(input) {
-    if (input % 5 === 0) {
-        alert(input + ' is a multiple of 5.')
-    } else {
-        alert(input + ' is not a multiple of 5.')
-    }
+    return parseFloat(input) % 5 === 0;
 }
 // Make a function named isThree(input)
 function isThree(input) {
-    input = 3;
+    return input === 3;
 }
 // Make a function named isMultipleOfThree(input)
 function isMultipleOfThree(input) {
-    if (input % 3 === 0) {
-        alert(input + ' is multiple of 3.')
-    } else {
-        alert(input + ' is not a multiple of 3.')
-    }
-
+    return parseFloat(input) % 3 === 0;
 }
 // Make a function named isMultipleOfThreeAndFive(input)
 function isMultipleOfThreeAndFive(input) {
-  if ((input % 3 === 0)&&(input % 5 === 0)) {
-    console.log(input + ' is a multiple of three and five.');
-  } else {
-    console.log(input + ' is not a multiple of three and five.');
-  }
+    return (input % 3 === 0 && input % 5 === 0);
 }
 // Make a function named isMultipleOf(target, n) which checks if target is evenly divisible by n
 function isMultipleOf(target, n) {
-  if (target % n === 0) {
-    console.log(target + ' is a multiple of ' + n);
-  }
+    return target % n === 0;
 }
 // Make a function named isTrue(boolean)
 function isTrue(boolean) {
-  if (boolean === true) {
-    console.log(boolean + ' is true.');
-  } else {
-    console.log(boolean + ' is false.');
-  }
+    return boolean === true;
 }
 // Make a function named isFalse(boolean)
 function isFalse(boolean) {
-  if (boolean === false) {
-    console.log(boolean + ' is false.');
-  } else {
-    console.log(boolean + ' is true.');
-  }
+    return boolean === false;
 }
 // Make a function named isTruthy(input), remember that values other than true will behave like true
 function isTruthy(input) {
-
+    return !(input === (undefined || null || 0 || '' || NaN));
 }
 // Make a function named isFalsy(input), remember that values other than false behave like false
 function isFalsy(input) {
-
+    return (input === (undefined || null || 0 || '' || NaN));
 }
 // Make a function named isVowel(letter)
 function isVowel(x) {
-    var result;
-    result = x == "A" || x == "E" || x == "I" || x == "O" || x == "U";
-    return result;
+    return String(x).toLowerCase() === (a || e || i || o || u);
 }
 // Make a function named isConsonant(letter)
 function isConsonant(letter) {
@@ -112,43 +72,35 @@ function isLowerCase(letter) {
 }
 // Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
 function hasLowerCase(string) {
-  if (string)
+    return (String(string) !== String(string).toUpperCase());
 }
 // Make a function named isSpace(letter) that returns if a character is a space character
 function isSpace(letter) {
-
+    return (String(letter) !== String(letter))
 }
 // Make a function named isZero(number)
 function isZero(number) {
-  if (number === 0) {
-    return (number + ' is zero')
-  } else {
-    return (number + ' is not zero')
-  }
+  return parseFloat(number) === 0;
 }
 // Make a function named notZero(input) that returns true if the input is not zero
 function notZero(input) {
-  if (number !=== 0) {
-    return (number + ' is not zero')
-  } else {
-    return (number + ' is zero')
-  }
+  return parseFloat(input) !== 0;
 }
 // Write a function named lowerCase(string)
 function lowerCase(string) {
-  string.toLowercase;
+  return (string.toLowercase);
 }
 // Write a function named double(n) that returns a number times two
 function double(n) {
-  console.log(n, n);
+  return n * 2;
 }
 // Write a function named triple(n) that returns a number times 3
 function triple(n) {
-  console.log(n, n, n);
+  return n * 3;
 }
 // Write a function named quadruple(n) that returns a number times 4
 function quadruple(n) {
-  console.log(n, n, n, n);
+  return n *4;
 }
 // Write a function named half(n) that returns 1/2 of the provided input
 function half(n) {
@@ -200,23 +152,19 @@ function radiansToDegrees(number) {
 }
 // Make a function named isBlank(input) that determines if a given input is spaces, newline characters, or tabs.Make a function named trim(string) that removes empty spaces before and after the input.Make a function named areEqual(input1, input2) that returns if both inputs have the same value
 function isBlank(input) {
-
+    return (input === (''.trim()));
 }
 // Make a function named areIdentical(input1, input2) that returns if both inputs are same value and data type.Make a function named not(input) returns the input with a flipped boolean
 function areIdentical(input1, input2) {
-  if (input1 === input2) {
-    return ('Both inputs are identical');
-  } else {
-    return ('Both inputs are not identical');
-  }
+    return input1 === input2;
 }
 // Make a function named notNot(input) that the negation of the negation of the input.Make a function named and(predicate1, predicate2) that returns the logical operation of AND
 function notNot(input) {
-
+    return input === true;
 }
 // Make a function named or(predicate1, predicate2) that returns the logical operation of OR
 function or(predicate1, predicate2) {
-
+    return predicate1 || predicate2;
 }
 // Write a function called reverseString(string) that reverses a string
 function reverseString(string){
