@@ -23,6 +23,6 @@
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
-    var planetsBreak = planetsString.split(<br>)
-    var planetsUnorderedList = planetsString.split()
+    var planetsBreak = planetsString.split('<br>');
+    var planetsUnorderedList = planetsString.push('</ul>').unshift('<ul>');
 })();
