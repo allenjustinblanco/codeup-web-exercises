@@ -12,6 +12,12 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+    var person = {
+        firstName: 'Rick',
+        lastName: 'Sanchez'
+    };
+    console.log(person.firstName);
+    console.log(person.lastName);
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,6 +27,10 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
+    person.sayHello = 'Greetings ' + person.firstName + person.lastName;
+
+    console.log(person.sayHello);
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -36,11 +46,18 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    shoppers.forEach(function(element){
+        if(element.amount >= 200){
+            console.log(element.name + ' you spent ' + element.amount + ' so you are eligible for a discount of 12%! Your final bill amounts to ' + element.amount * .88);
+        }
+    });
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -54,6 +71,45 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    var books = [
+        {
+            title: 'Game of Thrones',
+            author: {
+                firstName: 'George',
+                lastName: 'Martin'
+            }
+        },
+        {
+            title: 'Harry Potter',
+            author: {
+                firstName: 'J. K.',
+                lastName: 'Rowling'
+            }
+        },
+        {
+            title: 'The Lightning Thief',
+            author: {
+                firstName: 'Rick',
+                lastName: 'Riordan'
+            }
+        },
+        {
+            title: 'The Hunger Games',
+            author: {
+                firstName: 'Suzanne',
+                lastName: 'Collins'
+            }
+        },
+        {
+            title: 'To Kill A Mockingbird',
+            author: {
+                firstName: 'Harper',
+                lastName: 'Lee'
+            }
+        }
+    ];
+
 
     /**
      * TODO:
@@ -80,6 +136,12 @@
      *      ...
      */
 
+    books.forEach(function(element){
+        for (var i = 0; i <= 4; i++){
+            console.log('Book # ' + i + '\n' + 'Title: ' + element.title + '\n' + 'Author: ' + element.author.firstName + ' ' + element.author.lastName);
+        }
+    });
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -90,5 +152,13 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    function createBook(title, author){
+        if(title === String(title) && author === String(author)){
+            var book = [{title: title, author: author}]
+        }
+        return book;
+    }
+    function showBookInfo(book){
 
+    }
 })();

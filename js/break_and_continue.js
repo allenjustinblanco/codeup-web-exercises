@@ -10,10 +10,8 @@ do {
 console.log(userInput);
 
 
-for (var i = 1; i<=50; i++) {
-    function odd(input){
-        if(input % 2 === 1){
-            console
-        }
+for (var i = 1; i <= 50; i++) {
+    if(i % 2 === 1){
+        console.log('Here is an odd number: ' + i);
     }
 }
