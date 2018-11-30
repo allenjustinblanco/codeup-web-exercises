@@ -12,6 +12,8 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+    // objects hold state and behavior
+
     var person = {
         firstName: 'Rick',
         lastName: 'Sanchez'
@@ -28,7 +30,7 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
-    person.sayHello = 'Greetings ' + person.firstName + person.lastName;
+    person.sayHello = 'Greetings ' + person.firstName + ' ' + person.lastName;
 
     console.log(person.sayHello);
 
@@ -137,9 +139,7 @@
      */
 
     books.forEach(function(element){
-        for (var i = 0; i <= 4; i++){
-            console.log('Book # ' + i + '\n' + 'Title: ' + element.title + '\n' + 'Author: ' + element.author.firstName + ' ' + element.author.lastName);
-        }
+        console.log('Book # ' + books.indexOf(element) + '\n' + 'Title: ' + element.title + '\n' + 'Author: ' + element.author.firstName + ' ' + element.author.lastName);
     });
 
     /**
@@ -152,13 +152,14 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    function createBook(title, author){
-        if(title === String(title) && author === String(author)){
-            var book = [{title: title, author: author}]
-        }
+    function createBook(name){
+        var book = {};
+        book.name = name;
+        book.title = prompt('What is the title of the book?');
+        book.author = prompt('Who is the author of the book?');
         return book;
     }
     function showBookInfo(book){
-
+        return book;
     }
 })();
