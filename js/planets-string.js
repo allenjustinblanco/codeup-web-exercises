@@ -25,7 +25,9 @@
      * string, and <li> tags around each planet.
      */
 
-    var planetsBreak = planetsString.split('<br>');
+    var planetsBreak = planetsArray.join('<br>');
+    console.log(planetsBreak);
+
     function ulArray(array){
 
         var str = '<ul>'+ '\n';
@@ -38,6 +40,7 @@
 
         return str;
     }
-
     console.log(ulArray(planetsArray));
+    // document.body.innerHTML += "<ul><li>"
+    //     + planetsArray.join("</li><li>") + "</li></ul>";
 })();

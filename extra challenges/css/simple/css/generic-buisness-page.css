@@ -3,21 +3,20 @@
 }
 .wrapper {
     display: grid;
-    grid-template-columns: 100px auto;
+    grid-template-columns: auto;
     grid-template-rows: 40px 400px 800px 400px;
 }
 .header {
     grid-column: span 12;
-    background-color: #db2020;
+    background-color: #E25141;
 }
 .menu {
     grid-column: span 12;
-    background-color: #db2020;
+    background-color: #E25141;
     border-top: 2px solid #544d4d;
 }
 .content{
     grid-column: span 12;
-    background-color: #cbffcd;
 }
 .footer {
     grid-column: span 12;
