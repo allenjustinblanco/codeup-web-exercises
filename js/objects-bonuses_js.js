@@ -62,8 +62,8 @@ books.push({
         this.available = true;
         this.dateAvailable = 'now';
     }
-
 });
+
 
 // BONUS 3 (expanding on the books object exercise):
 //     Create an application to take in user input to build the books array of objects.
@@ -101,19 +101,21 @@ books.push({
 //     "wea-...",
 //     "-sel."
 // When running, current lyrics should also be displayed on the page.
-
+var things = ['Rock', 'Paper', 'Scissor'];
+var thing = things[Math.floor(Math.random()*things.length)];
+var interval = 1000;
 var jackBox = {
   triggered: false,
   intervalidId: null,
-  'play': function(input){
+  'play': setInterval(function(input){
       if(input === false) {
           for(var i = 1; i < this.lyrics.length; i++){
-              console.log(this.lyrics.push())
+              console.log(this.lyrics[i] + thing)
           }
       }
-  },
+  }, interval),
   'windUp': function() {
-      this.play = false
+      this.play = true
   },
   lyrics: [
       "All a-...",
@@ -147,7 +149,6 @@ var jackBox = {
 //
 // Test in console first then transfer to browser
 var max = 1000;
-var interval = 1000; //interval time in milliseconds
 var intervalId = setInterval(function () {
     if (stopWatch.count >= max) {
         clearInterval(intervalId);
