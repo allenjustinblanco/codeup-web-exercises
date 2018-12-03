@@ -33,7 +33,7 @@
        this.sterilized = true;
    },
    'vaccinate': function(nameOfShot) {
-       this.shotRecords.typeOfShot + nameOfShot;
+       this.shotRecords.typeOfShot.push({nameOfShot: nameOfShot, date: new Date()});
    }
  };
 
@@ -50,20 +50,20 @@
 //         - changes the available property to true
 //         - changes the dateAvailable property to the string "now"
 
-var books = {
+books.push({
     'keywords': ['Fiction', 'Non-Fiction'],
     'available': true,
     'dateAvailable': 'November 30, 2018 - December 1, 2018',
     'lend': function() {
         this.available = false;
-        this.dateAvailable =
+        this.dateAvailable = ;
     },
     'receive': function () {
         this.available = true;
         this.dateAvailable = 'now';
     }
 
-};
+});
 
 // BONUS 3 (expanding on the books object exercise):
 //     Create an application to take in user input to build the books array of objects.
@@ -107,7 +107,9 @@ var jackBox = {
   intervalidId: null,
   'play': function(input){
       if(input === false) {
-          console.log()
+          for(var i = 1; i < this.lyrics.length; i++){
+              console.log(this.lyrics.push())
+          }
       }
   },
   'windUp': function() {
@@ -144,14 +146,33 @@ var jackBox = {
 //   reset() - stops counter and resets count to zero
 //
 // Test in console first then transfer to browser
-
+var max = 1000;
+var interval = 1000; //interval time in milliseconds
+var intervalId = setInterval(function () {
+    if (stopWatch.count >= max) {
+        clearInterval(intervalId);
+        console.log('All done');
+    } else {
+        stopWatch.count++;
+        console.log('Repeating this line ' + stopWatch.count);
+    }
+}, interval);
 var stopWatch = {
-  intervalidId: ,
+  intervalId: intervalId,
   count: 0,
   'start': function () {
       console.log(this.count++)
+  },
+  'pause': function pause(){
+
+  },
+  'reset': function reset(){
+      this.count = 0;
   }
 };
+
+
+
 
 // -- more --
 //
@@ -180,6 +201,20 @@ var stopWatch = {
 //         "Jeffrey wants to goto the store": "string",
 //         false: boolean
 //       }
+
+function longestWord(input){
+    if(input === String(input)){
+        var splitInput = input.split(' ');
+        for(var i = 1; i < splitInput.length; i++){
+            var stringLength = [];
+            stringLength += splitInput[i].length
+        }
+        return Math.max(stringLength);
+    } else {
+        return false;
+    }
+}
+
 // 5. Write a function that takes two strings as input and returns true or false
 // depending on whether they are anagrams(contain exactly the same letters). Only
 // lowercase letters will be passed.

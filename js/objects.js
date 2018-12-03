@@ -14,12 +14,22 @@
 
     // objects hold state and behavior
 
-    var person = {
-        firstName: 'Rick',
-        lastName: 'Sanchez'
-    };
-    console.log(person.firstName);
-    console.log(person.lastName);
+    // var person = {
+    //     firstName: 'Rick',
+    //     lastName: 'Sanchez'
+    // };
+    // console.log(person.firstName);
+    // console.log(person.lastName);
+
+    var person = {};
+
+    person.firstName = 'Rick';
+    person.lastName = 'Sanchez';
+
+    function createPerson(firstName, lastName){
+        person.push({firstName: firstName, lastName: lastName})
+    }
+
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -56,10 +66,9 @@
 
     shoppers.forEach(function(element){
         if(element.amount >= 200){
-            console.log(element.name + ' you spent ' + element.amount + ' so you are eligible for a discount of 12%! Your final bill amounts to ' + element.amount * .88);
+            console.log(element.name + ' spent ' + element.amount + ' so you are eligible for a discount of 12%! Your final bill amounts to ' + element.amount * .88);
         }
     });
-
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -152,14 +161,21 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    function createBook(name){
-        var book = {};
-        book.name = name;
-        book.title = prompt('What is the title of the book?');
-        book.author = prompt('Who is the author of the book?');
-        return book;
+    // function createBook(bookTitle, firstName, lastName){
+    //     books.push({title: bookTitle, author: {firstname: bookAuthor, lastName: lastName})
+    // }
+
+    function createBook(title, firstName, lastName) {
+        return {
+            title: title,
+            author: {
+                firstName: firstName,
+                lastName: lastName
+            }
+        }
     }
-    function showBookInfo(book){
-        return book;
+    function showBookInfo(element) {
+        console.log('Book # ' + (index + 1) + '\n' + 'Title: ' + element.title + '\n' + 'Author: ' + element.author.firstName + ' ' + element.author.lastName);
     }
+    books.push(createBook('title', 'firstName', 'lastName'));
 })();
