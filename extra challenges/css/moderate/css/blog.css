@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+.container {
+    display: grid;
+}
+.header {
+
+}
+.main {
+
+}
+.content {
+
+}
+.aside {
+
+}
+.footer {
+
+}

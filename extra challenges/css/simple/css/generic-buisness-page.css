@@ -14,6 +14,7 @@
     grid-column: span 12;
     background-color: #E25141;
     border-top: 2px solid #544d4d;
+    text-align: center;
 }
 .content{
     grid-column: span 12;

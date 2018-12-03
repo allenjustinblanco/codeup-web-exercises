@@ -138,8 +138,8 @@
      *      ...
      */
 
-    books.forEach(function(element){
-        console.log('Book # ' + books.indexOf(element) + '\n' + 'Title: ' + element.title + '\n' + 'Author: ' + element.author.firstName + ' ' + element.author.lastName);
+    books.forEach(function(element, index){
+        console.log('Book # ' + (index + 1) + '\n' + 'Title: ' + element.title + '\n' + 'Author: ' + element.author.firstName + ' ' + element.author.lastName);
     });
 
     /**
