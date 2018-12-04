@@ -3,19 +3,24 @@
 }
 .container {
     display: grid;
+    font-family: Raleway, sans-serif;
+    padding: 2px 16px;
+    margin: 5px;
 }
-.header {
-
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
-.main {
-
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-.content {
-
+.posts-img {
+    width: 10px;
+    height: 10px;
 }
-.aside {
-
-}
-.footer {
-
+span {
+    background-color: black;
+    color: white;
 }
