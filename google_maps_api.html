@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        #map-canvas {
+            background-color: #3B94D9;
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+<div id="map-canvas"></div>
+<input type="text" id="address">
+<button id="locate">Locate</button>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKqkkLfiKJlJFmSG2DINLW7REOiMOJaqY"></script>
+<script type="text/javascript">
+    (function() {
+        "use strict";
+        var mapOptions = {
+            zoom: 6,
+            center: {
+                lat: 31.9686,
+                lng: -99.9018
+            }
+        };
+        var rosella = { lat: 29.4263, lng: -98.4935 };
+        var geocoder = new google.maps.Geocoder();
+        var btn = document.getElementById('locate');
+        btn.addEventListener('click', function(){
+            var inputAddress = document.getElementById('address').value;
+            geocoder.geocode({ "address": inputAddress }, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    console.log(results);
+                    map.setCenter(results[0].geometry.location);
+                    var tempMarker = new google.maps.Marker({
+                        position: results[0].geometry.location,
+                        map: map
+                    });
+                    // Create a new infoWindow object with content
+                    var infowindow = new google.maps.InfoWindow({
+                        content: 'Rosellas'
+                    });
+                    // Open the window using our map and marker
+                    infowindow.open(map, tempMarker);
+                } else {
+                    // Show an error message with the status if our request fails
+                    alert("Geocoding was not successful - STATUS: " + status);
+                }
+            });
+        });
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    })();
+</script>
+</body>
