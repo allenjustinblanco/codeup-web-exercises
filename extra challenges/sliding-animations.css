@@ -7,19 +7,35 @@ body {
     font-size: 100%;
     line-height: 1.4;
 }
-
-.introsection {
-    /* background-color: #444; */
+h3 {
+    border-top: none;
+    padding: 20px;
+    margin-top: -50px;
 }
+h3 {
+    font-weight: 700;
+    color: #000;
+    line-height: 1.2;
+    font-size: 1em;
 
-.letterpress {
+    margin: 0 ;
+}
+.container .caption {
+    padding: 20px;
+    margin-top: -50px;
+}
+.introsection {
+/* background-color: #444; */
+}
+.letterpress{
     font-family: EYInterstate, Helvetica, sans-serif;
     margin: 0 auto;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-shadow: 1px 2px 0px #808080 ,  -1px -2px 1px #333;
+    text-shadow:   1px 2px 0px #808080 ,
+    -1px -2px 1px #333;
     color: #222;
     font-size: 4vw;
     text-align: left;
@@ -27,7 +43,6 @@ body {
     letter-spacing: -.05em;
     max-width: 60vw;
 }
-
 .container,
 .staggered-animation-container {
     position: relative;
@@ -35,38 +50,17 @@ body {
     max-width: 75%;
     margin-right: auto;
     font-size: .875em;
-    padding-bottom: 40px;
+/ / 14 px padding-bottom: 40 px;
 }
-@media only screen and (min-width: 768px) {
-    .container,
-    .staggered-animation-container {
-        max-width: 700px;
-    }
-}
-@media only screen and (min-width: 1000px) {
-    .container,
-    .staggered-animation-container {
-        max-width: 920px;
-    }
-}
-.container .inner,
-.staggered-animation-container .inner {
+.inner {
     max-width: 66%;
 }
-
 .mod-inset-left {
     background: #cfcfcf;
     padding: 1.15em;
     margin: 1em 0;
-}
-@media only screen and (min-width: 768px) {
-    .mod-inset-left {
-        width: 20%;
-        float: left;
-        margin: 0 1em 0 0;
-    }
-}
 
+}
 .mod-inline,
 .caption {
     float: right;
@@ -75,28 +69,16 @@ body {
     overflow: hidden;
     width: 30%;
 }
-.mod-inline.left,
-.caption.left {
-    padding-right: 50px;
-    float: left;
-}
-.mod-inline h3,
-.caption h3 {
-    font-weight: 700;
-    color: #000;
-    line-height: 1.2;
-    font-size: 1em;
-    padding-top: 1em;
-    border-top: 2px solid;
-    margin: 0;
-}
-.mod-inline p, .mod-inline li,
-.caption p,
-.caption li {
+.left {
+     padding-right: 50px;
+     float: left;
+ }
+
+
+p, li {
     font-size: .75rem;
     line-height: 1.6;
 }
-
 [class^="img"] {
     background-attachment: fixed;
     height: 200px;
@@ -105,48 +87,67 @@ body {
     display: table;
     width: 100%;
 }
-[class^="img"] h3 {
-    display: table-cell;
+h3 {
+    /*display:table-cell;*/
     vertical-align: middle;
     font-size: 60px;
     text-align: center;
     color: #fff;
 }
-[class^="img"] + .container .caption {
-    background: #fff;
-    padding: 20px;
-    margin-top: -50px;
-}
-[class^="img"] + .container .caption h3 {
-    border-top: none;
-    padding-top: 0;
-}
 
 .img1 {
-    background: url(http://unsplash.imgix.net/9/DeepInTheForest_cre8art4life_JulieGeiger.jpg) no-repeat center bottom/cover;
+    background: url(http://unsplash.imgix.net/9/DeepInTheForest_cre8art4life_JulieGeiger.jpg) no-repeat center bottom / cover;
     height: 100vh;
-}
 
+}
 .img2 {
     height: 300px;
-    background: url(https://unsplash.imgix.net/photo-1422513391413-ddd4f2ce3340?dpr=2&fit=crop&fm=jpg&q=75&w=1050) no-repeat center center/cover;
+    background: url(https://unsplash.imgix.net/photo-1422513391413-ddd4f2ce3340?dpr=2&fit=crop&fm=jpg&q=75&w=1050) no-repeat center center / cover;
     background-attachment: fixed;
+
 }
+
+
 
 *, *:before, *:after {
     box-sizing: border-box;
 }
-
 html, body {
-    /*   height: 100%; */
+       height: 100%;
     overflow: hidden;
     overflow-y: auto;
+    font-family: Muli;
 }
 
-.os-animation {
-    opacity: 0;
-}
 
-.os-animation.animated {
+animation
+
+   .os-animation{
+       opacity: 0;
+   }
+
+.os-animation.animated{
     opacity: 1;
+}
+.typewriter h3 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation:
+            typing 3.5s steps(40, end),
+            blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
 }

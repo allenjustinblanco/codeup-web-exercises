@@ -24,8 +24,26 @@
                 lng: -99.9018
             }
         };
-        var rosella = { lat: 29.4263, lng: -98.4935 };
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
         var geocoder = new google.maps.Geocoder();
+        var tempMarker = new google.maps.Marker({
+            animation: google.maps.Animation.DROP,
+            position: { lat: 29.4263, lng: -98.4935 },
+            map: map,
+            title: 'Rosella at The Rand'
+        });
+        // Create a new infoWindow object with content
+        var infowindow = new google.maps.InfoWindow({
+            content: 'rosella at the rand',
+            maxWidth: 400
+        });
+        // Open the window using our map and marker
+        google.maps.event.addListener(tempMarker, 'click', function(){
+            infowindow.open(map, tempMarker);
+        });
+        google.maps.event.addListener(map, 'click', function(){
+            infowindow.close();
+        });
         var btn = document.getElementById('locate');
         btn.addEventListener('click', function(){
             var inputAddress = document.getElementById('address').value;
@@ -34,13 +52,17 @@
                     console.log(results);
                     map.setCenter(results[0].geometry.location);
                     var tempMarker = new google.maps.Marker({
+                        animation: google.maps.Animation.DROP,
                         position: results[0].geometry.location,
                         map: map
                     });
                     // Create a new infoWindow object with content
                     var infowindow = new google.maps.InfoWindow({
-                        content: 'Rosellas'
+                        content: inputAddress
                     });
+                    mapOptions = {
+                        zoom: 20,
+                    };
                     // Open the window using our map and marker
                     infowindow.open(map, tempMarker);
                 } else {
@@ -49,7 +71,6 @@
                 }
             });
         });
-        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
     })();
 </script>
 </body>
