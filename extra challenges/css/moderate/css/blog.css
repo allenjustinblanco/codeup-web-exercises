@@ -1,6 +1,10 @@
 * {
     box-sizing: border-box;
 }
+span {
+    background-color: black;
+    color: white;
+}
 .container {
     display: grid;
     font-family: Raleway, sans-serif;
@@ -19,8 +23,4 @@
 .posts-img {
     width: 10px;
     height: 10px;
-}
-span {
-    background-color: black;
-    color: white;
 }

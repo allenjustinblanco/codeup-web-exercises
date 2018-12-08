@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jquery exercise</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+<body>
+<h1 id="header" class="header">Hello World!</h1>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script>
+    "use strict";
+
+    window.onload = function() {
+        alert( 'The page has finished loading!' );
+    };
+
+    $(document).ready(function(){
+        window.onload;
+        var contents = $('#header').html();
+        alert(contents);
+    });
+</script>
+</body>
