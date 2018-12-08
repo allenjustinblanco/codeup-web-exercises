@@ -6,7 +6,11 @@
 </head>
 <body>
 <h1 id="header" class="header">Hello World!</h1>
-
+<p id="paragraphTag">Paragraph</p>
+<ul id="unorderedList">
+    <li id="listItem">List</li>
+</ul>
+<div id="divTag">Div</div>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script>
     "use strict";
@@ -17,7 +21,7 @@
 
     $(document).ready(function(){
         window.onload;
-        var contents = $('#header').html();
+        var contents = $('#paragraphTag').html();
         alert(contents);
     });
 </script>
