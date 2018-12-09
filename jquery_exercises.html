@@ -15,15 +15,18 @@
 <script>
     "use strict";
 
-    window.onload = function() {
-        alert( 'The page has finished loading!' );
-    };
-
     $(document).ready(function(){
         window.onload;
         var contents = $('#paragraphTag').html();
         alert(contents);
-        $('.codeup').css('border', '1px red solid')
+        $('*').css('font-size', '20px');
+        var contentsofH1 = $('h1').html();
+        alert(contentsofH1);
     });
+
+    window.onload = function() {
+        alert( 'The page has finished loading!' );
+    };
+
 </script>
 </body>
