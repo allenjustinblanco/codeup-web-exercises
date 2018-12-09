@@ -14,19 +14,16 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script>
     "use strict";
+     $(document).ready(function(){
+         $('h1').on('click', function(){
+         $('h1').css('backgroundColor', 'red')
+         });
+         $('p').dblclick(function(){
+             $('p').css('font-size', '18px')
+         });
+         $('li').mouseenter(function(){$('li').css('color', 'red')}).mouseleave(function(){$('li').css('color', 'black')});
 
-    $(document).ready(function(){
-        window.onload;
-        var contents = $('#paragraphTag').html();
-        alert(contents);
-        $('*').css('font-size', '20px');
-        var contentsofH1 = $('h1').html();
-        alert(contentsofH1);
-    });
-
-    window.onload = function() {
-        alert( 'The page has finished loading!' );
-    };
+     })
 
 </script>
 </body>
