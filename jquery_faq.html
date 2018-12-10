@@ -33,6 +33,7 @@
     <dt id="dt10">Grand Canyon</dt>
     <dd class="invisible">Grand Canyon National Park, in Arizona, is home to much of the immense Grand Canyon, with its layered bands of red rock revealing millions of years of geological history.</dd>
 </dl>
+<a href="#" id="highlight-important">Click to toggle the facts of these National Parks.</a>
 <ul>
     <li><h3>Yosemite</h3></li>
     <li>
@@ -66,7 +67,7 @@
         </ul>
     </li>
 </ul>
-<a href="#" id="highlight-important">Click to toggle the facts of these National Parks.</a>
+<button id="yellowBackground">Yellow Background</button>
 <script>
     $(document).ready(function(){
         $('#highlight-important').click(function(event) {
@@ -76,7 +77,7 @@
         $('#dt1').on('click', function(){
             event.preventDefault();
             $('#dt1').css('backgroundColor', 'red')
-        })
+        });
         $('#dt2').on('click', function(){
             event.preventDefault();
             $('#dt2').css('backgroundColor', 'blue')
@@ -113,8 +114,6 @@
             event.preventDefault();
             $('#dt10').css('backgroundColor', 'grey')
         })
-
-
     })
 </script>
 </body>
