@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js warm up</title>
+</head>
+<body>
+<script>
+    function getHighest(input){
+        console.log(Math.max.apply(null, input));
+    }
+    function getLowest(input){
+        console.log(Math.min.apply(null, input));
+    }
+    var arrayOfNumbers = [
+        [1,2,3],
+        [2,3,4],
+        [3,4,5]
+    ];
+    function sumAllNumbers(input){
+        var sum = input.reduce(add, 0);
+
+        function add(a, b) {
+            return a + b;
+        }
+
+        console.log(sum);
+    }
+</script>
+</body>
+</html>

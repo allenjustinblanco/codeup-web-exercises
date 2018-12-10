@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery_faq</title>
+    <script src="js/jquery-2.2.4.js"></script>
+    <style>
+        .invisible {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<dl>
+    <dt>Big Bend</dt>
+    <dd class="invisible">The Big Bend includes the entire Chisos mountain range and a large swath of the Chihuahuan Desert.</dd>
+    <dt>Yellowstone</dt>
+    <dd class="invisible">Yellowstone National Park is a nearly 3,500-sq.-mile wilderness recreation area atop a volcanic hot spot.</dd>
+    <dt>Zion</dt>
+    <dd class="invisible">Zion National Park is a southwest Utah nature preserve distinguished by Zion Canyon’s steep red cliffs.</dd>
+    <dt>Glacier</dt>
+    <dd class="invisible">Glacier National Park is a 1,583-sq.-mi. wilderness area in Montana's Rocky Mountains, with glacier-carved peaks and valleys running to the Canadian border.</dd>
+    <dt>Yosemite</dt>
+    <dd class="invisible">Yosemite National Park is in California’s Sierra Nevada mountains.</dd>
+    <dt>Olympic</dt>
+    <dd class="invisible">Olympic National Park is on Washington's Olympic Peninsula in the Pacific Northwest. </dd>
+    <dt>Rocky</dt>
+    <dd class="invisible">Rocky Mountain National Park in northern Colorado spans the Continental Divide and encompasses protected mountains, forests and alpine tundra.</dd>
+    <dt>Acadia</dt>
+    <dd class="invisible">Acadia National Park is a 47,000-acre Atlantic coast recreation area primarily on Maine's Mount Desert Island.</dd>
+    <dt>Grand Teton</dt>
+    <dd class="invisible">Grand Teton National Park is in the northwest of the U.S state of Wyoming.</dd>
+    <dt>Grand Canyon</dt>
+    <dd class="invisible">Grand Canyon National Park, in Arizona, is home to much of the immense Grand Canyon, with its layered bands of red rock revealing millions of years of geological history.</dd>
+</dl>
+<a href="#" id="highlight-important">Click to toggle the facts of these National Parks.</a>
+<script>
+    $(document).ready(function(){
+        $('#highlight-important').click(function(event) {
+            event.preventDefault();
+            $('.invisible').toggleClass('display');
+        });
+    })
+</script>
+</body>
+</html>
