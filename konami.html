@@ -10,6 +10,7 @@
     p {
         color: white;
     }
+
 </style>
 <body>
 <h1>Konami Code</h1>
@@ -52,14 +53,12 @@
 
                 var key = e.keyCode;
 
-                // Begin watching if first key in sequence was pressed.
                 if(!started){
                     if(key === 38){
                         started = true;
                     }
                 }
 
-                // If we've started, pay attention to key presses, looking for right sequence.
                 if (started){
 
                     if (konamikeys[count] === key){
