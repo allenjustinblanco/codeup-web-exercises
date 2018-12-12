@@ -14,6 +14,7 @@
     </style>
 </head>
 <body>
+<div id="alert"></div>
 <div>
     <h1 id="mainHeader">Would you like to sign up for our newsletter?</h1>
     <span id="x">x</span>
@@ -87,62 +88,61 @@
         });
         $('#dt1').on('click', function(){
             event.preventDefault();
-            $('#dt1').css('backgroundColor', 'red')
+            $(this).css('backgroundColor', 'red')
         });
         $('#dt2').on('click', function(){
             event.preventDefault();
-            $('#dt2').css('backgroundColor', 'blue')
+            $(this).css('backgroundColor', 'blue')
         });
         $('#dt3').on('click', function(){
             event.preventDefault();
-            $('#dt3').css('backgroundColor', 'green')
+            $(this).css('backgroundColor', 'green')
         });
         $('#dt4').on('click', function(){
             event.preventDefault();
-            $('#dt4').css('backgroundColor', 'yellow')
+            $(this).css('backgroundColor', 'yellow')
         });
         $('#dt5').on('click', function(){
             event.preventDefault();
-            $('#dt5').css('backgroundColor', 'violet')
+            $(this).css('backgroundColor', 'violet')
         });
         $('#dt6').on('click', function(){
             event.preventDefault();
-            $('#dt6').css('backgroundColor', 'cyan')
+            $(this).css('backgroundColor', 'cyan')
         });
         $('#dt7').on('click', function(){
             event.preventDefault();
-            $('#dt7').css('backgroundColor', 'teal')
+            $(this).css('backgroundColor', 'teal')
         });
         $('#dt8').on('click', function(){
             event.preventDefault();
-            $('#dt8').css('backgroundColor', 'maroon')
+            $(this).css('backgroundColor', 'maroon')
         });
         $('#dt9').on('click', function(){
             event.preventDefault();
-            $('#dt9').css('backgroundColor', 'whitesmoke')
+            $(this).css('backgroundColor', 'whitesmoke')
         });
         $('#dt10').on('click', function(){
             event.preventDefault();
-            $('#dt10').css('backgroundColor', 'grey')
+            $(this).css('backgroundColor', 'grey')
         });
         $('#yellowBackground').on('click', function(){
             $('ul > li.yellowBack').css('backgroundColor', 'yellow')
         });
-        $('h3#header1').on('click', function(){
-            $('h3#header1').parent().next().toggleClass('bold').toggle('')
+        $('#header1').on('click', function(){
+            $(this).parent().next().toggleClass('bold').toggle('')
         });
-        $('h3#header2').on('click', function(){
-            $('h3#header2').parent().next().toggleClass('bold').toggle('')
+        $('#header2').on('click', function(){
+            $(this).parent().next().toggleClass('bold').toggle('')
         });
-        $('h3#header3').on('click', function(){
-            $('h3#header3').parent().next().toggleClass('bold').toggle('')
+        $('#header3').on('click', function(){
+            $(this).parent().next().toggleClass('bold').toggle('')
         });
         $('#x').on('click', function(){
             $('#mainHeader').hide();
         });
-        $('#sub-header').fadeIn(8000);
+        $('#subHeader').fadeIn(8000)
     })
-
 </script>
 </body>
 </html>
