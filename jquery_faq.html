@@ -8,9 +8,17 @@
         .invisible {
             display: none;
         }
+        .bold {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
+<div>
+    <h1 id="mainHeader">Would you like to sign up for our newsletter?</h1>
+    <span id="x">x</span>
+    <h2 id="subHeader" class="invisible">Register for the site</h2>
+</div>
 <dl>
     <dt id="dt1" >Big Bend</dt>
     <dd class="invisible">The Big Bend includes the entire Chisos mountain range and a large swath of the Chihuahuan Desert.</dd>
@@ -36,7 +44,7 @@
 <a href="#" id="highlight-important">Click to toggle the facts of these National Parks.</a>
 <ul>
     <li><h3 id="header1">Yosemite</h3></li>
-    <li class="bold1">
+    <li>
         <ul>
             <li>Yosemite’s granite rock formations glow like fire at sunset. </li>
             <li>The park’s diverse landscape supports more than 400 species.</li>
@@ -48,7 +56,7 @@
 <ul>
     <li><h3 id="header2">Big Bend</h3></li>
     <li>
-        <ul class="bold2">
+        <ul>
             <li>The Rio Grande River runs through Big Bend National Park. The park is named Big Bend after the river's big bend in west Texas.</li>
             <li>Big Bend National Park is considered to be the largest Chihuahuan Desert protected region in the country.</li>
             <li>Langford Hot Springs are located in Big Bend National Park. The temperature of the spring is approximately 105 degrees Fahrenheit.</li>
@@ -59,7 +67,7 @@
 <ul>
     <li><h3 id="header3">Yellowstone</h3></li>
     <li>
-        <ul class="bold3">
+        <ul>
             <li>Yellowstone is bigger than two U.S. states.</li>
             <li>A veteran of the Lewis and Clark expedition may have been the first American to see Yellowstone.</li>
             <li>One of Yellowstone’s earliest explorers was stranded there for 37 days.</li>
@@ -69,7 +77,9 @@
 </ul>
 <button id="yellowBackground">Yellow Background</button>
 <script>
-
+    $('h3#header3').parent().next().hide();
+    $('h3#header2').parent().next().hide();
+    $('h3#header1').parent().next().hide();
     $(document).ready(function(){
         $('#highlight-important').click(function(event) {
             event.preventDefault();
@@ -82,51 +92,55 @@
         $('#dt2').on('click', function(){
             event.preventDefault();
             $('#dt2').css('backgroundColor', 'blue')
-        })
+        });
         $('#dt3').on('click', function(){
             event.preventDefault();
             $('#dt3').css('backgroundColor', 'green')
-        })
+        });
         $('#dt4').on('click', function(){
             event.preventDefault();
             $('#dt4').css('backgroundColor', 'yellow')
-        })
+        });
         $('#dt5').on('click', function(){
             event.preventDefault();
             $('#dt5').css('backgroundColor', 'violet')
-        })
+        });
         $('#dt6').on('click', function(){
             event.preventDefault();
             $('#dt6').css('backgroundColor', 'cyan')
-        })
+        });
         $('#dt7').on('click', function(){
             event.preventDefault();
             $('#dt7').css('backgroundColor', 'teal')
-        })
+        });
         $('#dt8').on('click', function(){
             event.preventDefault();
             $('#dt8').css('backgroundColor', 'maroon')
-        })
+        });
         $('#dt9').on('click', function(){
             event.preventDefault();
             $('#dt9').css('backgroundColor', 'whitesmoke')
-        })
+        });
         $('#dt10').on('click', function(){
             event.preventDefault();
             $('#dt10').css('backgroundColor', 'grey')
-        })
+        });
         $('#yellowBackground').on('click', function(){
             $('ul > li.yellowBack').css('backgroundColor', 'yellow')
-        })
+        });
         $('h3#header1').on('click', function(){
-            $('.bold1').css('fontWeight', 'bold')
-        })
+            $('h3#header1').parent().next().toggleClass('bold').toggle('')
+        });
         $('h3#header2').on('click', function(){
-            $('.bold2').css('fontWeight', 'bold')
-        })
+            $('h3#header2').parent().next().toggleClass('bold').toggle('')
+        });
         $('h3#header3').on('click', function(){
-            $('.bold3').css('fontWeight', 'bold')
-        })
+            $('h3#header3').parent().next().toggleClass('bold').toggle('')
+        });
+        $('#x').on('click', function(){
+            $('#mainHeader').hide();
+        });
+        $('#sub-header').fadeIn(8000);
     })
 
 </script>
