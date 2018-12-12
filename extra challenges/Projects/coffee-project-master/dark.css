@@ -1,0 +1,13 @@
+.container{
+    height: 400px;
+}
+body{
+    background-image: url('img/christmas-colour.png');
+    color: #d60648;
+}
+.btn-primary{
+    background-color: #05a16f;
+}
+h1, h3 {
+    text-shadow: -5px 5px 0 lightgrey;
+}

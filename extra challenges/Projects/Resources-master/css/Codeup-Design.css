@@ -1,0 +1,124 @@
+.logo {
+    width: 105px;
+    height: 105px;
+}
+.center {
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
+.my_container {
+    position: absolute;
+    top: 5em;
+}
+.disappear {
+    visibility: hidden;
+}
+.grey {
+    background-color: lightgrey;
+}
+.left-images {
+    border: 4px solid #E6E6E6;
+}
+.circle {
+    border-radius: 50%;
+    width: 8em;
+    height: 8em;
+    border: white solid .5em;
+    display: inline-block;
+    margin: 2.5em .5em;
+}
+.circle-red {
+    background-color: rgb(220, 63, 45);
+}
+.circle-yellow {
+    background-color: rgb(224, 141, 20);
+}
+.circle-green {
+    background-color: rgb(107, 163, 90);
+}
+.circle-blue {
+    background-color: rgb(21, 157, 153);
+}
+.circle-row {
+    text-align: center;
+    color: white;
+}
+.textmid {
+    line-height: 7;
+}
+.card {
+    width: 18rem;
+}
+body {
+    background-color: #F0F0F0;
+    width: 100%;
+    box-sizing: border-box;
+}
+* {
+    justify-content: center;
+    margin: auto;
+}
+h2, h3 {
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+}
+h5 {
+    font-family: 'Anton', sans-serif;
+}
+h1 {
+    font-family: 'Abel', sans-serif;
+}
+.abel {
+    font-family: 'Abel', sans-serif;
+}
+.white-nav {
+    background-color: white;
+    width: 100%;
+    height: 3rem;
+    position: absolute;
+    top: 25px;
+}
+.card {
+    background-color: #F0F0F0;
+    border: none;
+}
+.side-img {
+    height: 33px;
+    width: 43%;
+    margin-left: 1em;
+}
+.list-unstyled {
+    width: 30%;
+    margin:0;
+}
+.float-right {
+    float: right;
+}
+.width33 {
+    width: 33%;
+}
+p {
+    margin-bottom: 5px;
+}
+.twitter-paragraph {
+    font-size: x-small;
+}
+.last-tweet {
+    font-size: medium;
+    font-weight: bold;
+}
+.side-img-twitter {
+    height: 32px;
+    width: 53%;
+    margin-left: 1em;
+}
+.feature {
+    display: inline;
+    font-size: 25%;
+}
+.badge-width {
+    width: 7em;
+    margin: 0;
+    float: right;
+}

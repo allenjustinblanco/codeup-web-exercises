@@ -1,0 +1,10 @@
+.container{
+    height: 400px;
+}
+body{
+    background-image: url("img/light-grey-terrazzo.png");
+    color: #c17d0d;
+}
+.btn-primary {
+    background-color: #915e0a;
+}

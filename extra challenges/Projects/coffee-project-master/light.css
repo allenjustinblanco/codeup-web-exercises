@@ -1,0 +1,10 @@
+.container{
+    height: 400px;
+}
+body{
+    background-image: url("img/christmas-dark.png");
+    color: #e29550;
+}
+.btn-primary {
+    background-color: #9550e2;
+}
