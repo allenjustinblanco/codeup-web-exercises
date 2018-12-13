@@ -18,8 +18,8 @@
 <div>
     <h1 id="mainHeader">Would you like to sign up for our newsletter?</h1>
     <span id="x">x</span>
-    <h2 id="subHeader" class="invisible">Register for the site</h2>
 </div>
+<h2 id="subHeader" class="invisible">Register for the site</h2>
 <dl>
     <dt id="dt1" >Big Bend</dt>
     <dd class="invisible">The Big Bend includes the entire Chisos mountain range and a large swath of the Chihuahuan Desert.</dd>
@@ -139,7 +139,7 @@
             $(this).parent().next().toggleClass('bold').toggle('')
         });
         $('#x').on('click', function(){
-            $('#mainHeader').hide();
+            $(this).parent().fadeOut();
         });
         $('#subHeader').fadeIn(8000)
     })
