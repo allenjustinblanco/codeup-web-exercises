@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Ajax Blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
+<div id="posts">
+</div>
+
+
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     'use strict';
     $(document).ready(function(){
-
+        $.ajax("data/blog.json").done(function(data){
+            $('#posts').append('<h1>' + data[0].title + '</h1>' + '<p>' + data[0].content + '</p>' + data[0].date + '<p>' + data[0].categories + '</p>' + '<h1>' + data[1].title + '</h1>' + '<p>' + data[1].content + '</p>' + data[1].date + '<p>' + data[1].categories + '</p>')
+        });
     })
 </script>
 </body>

@@ -27,7 +27,7 @@
 (function() {
     "use strict";
     // TODO: Create an ajax GET request for /data/inventory.json
-    var page = $.ajax("data/inventory.json").done(function(data){
+    $.ajax("data/inventory.json").done(function(data){
         for(var i = 0; i < data.length; i++){
             $('#insertProducts').append('<tr>' + "<td>" + data[i].title + "</td>" + '<td>' + data[i].quantity +'</td>' + '<td>' + data[i].price + '</td>' + '<td>' + data[i].categories +'</td>' + '</tr>');
         }
