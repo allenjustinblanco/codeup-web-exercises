@@ -4,31 +4,59 @@
     <meta charset="UTF-8">
     <title>Weather Map</title>
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
     <style>
         span {
             font-weight: bold;
         }
-        * {
-            font-family: 'ZCOOL QingKe HuangYou', cursive;
-            background-color: black;
+        body {
+            font-family: 'Charm',cursive;
+            background-image: url("img/dark-grey-terrazzo.png");
             color: white;
+            box-sizing: border-box;
+        }
+        footer {
+            float: right;
+        }
+        .container {
+         display: none;
+        }
+        .card {
+            box-shadow: 0 4px 8px 0 white;
+            transition: 0.4s;
+            text-align: center;
+            width: 20%;
+            display: inline-block;
+        }
+        .card:hover {
+            box-shadow: 0 8px 16px 0 teal;
+        }
+        .header {
+            text-align: center;
+        }
+        .header:hover {
+            color: teal;
         }
     </style>
 </head>
 <body>
-<div id="header"></div>
-<div id="main"></div>
+<div class="container">
+    <div id="header" class="header"></div>
+    <div id="main"></div>
+    <div id="map"></div>
+    <footer><p>by Allen Justin Blanco</p></footer>
+</div>
 <script src="js/jquery-2.2.4.js"></script>
 <script>
-    $.get("http://api.openweathermap.org/data/2.5/forecast?zip=78251,us&units=imperial&APPID=5470297cbd9751ca9d6de1c1f2fe68bf", {
-        APPID: "5470297cbd9751ca9d6de1c1f2fe68bf",
-        q:     "San Antonio, US"
-    }).done(function(data) {
-        $('#header').append('<h1>' + data.city.name + '</h1><h2>Five Day Forecast</h2>');
-        for(var i = 0; i < data.list.length; i += 8){
-            $('#main').append('<div>Day ' + ((i/8)+1) + '</div><div>' + data.list[i].main.temp_min + '°/' + data.list[i].main.temp_max + '°</div>' + '<div>' + data.list[i].weather[0].description + '</div><div><span>Humidity</span>: ' + data.list[i].main.humidity + '</div><div>Wind:' + data.list[i].wind.speed + '</div><div>Pressure: ' + data.list[i].main.pressure + '</div><br>');
-        }
-        console.log(data);
+    $(document).ready(function(){
+        $.get("http://api.openweathermap.org/data/2.5/forecast?zip=78251,us&units=imperial&APPID=5470297cbd9751ca9d6de1c1f2fe68bf").done(function(data) {
+            $('#header').append('<h1>' + data.city.name + '</h1><h2>Five Day Forecast</h2>');
+            for(var i = 0; i < data.list.length; i += 8){
+                $('#main').append('<div class="card">' + '<h3>Day ' + ((i/8)+1) + '</h3><div>' + data.list[i].main.temp_min + '°/' + data.list[i].main.temp_max + '°</div>' + '<div>' + data.list[i].weather[0].description + '</div><div><span>Humidity</span>: ' + data.list[i].main.humidity + '</div><div><span>Wind</span>: ' + data.list[i].wind.speed + '</div><div><span>Pressure</span>: ' + data.list[i].main.pressure + '</div></div>');
+            }
+            console.log(data);
+            $('.container').fadeIn(4000)
+        });
     });
 </script>
 </body>
