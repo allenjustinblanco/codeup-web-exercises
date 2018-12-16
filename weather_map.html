@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map</title>
-    <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Indie+Flower|Nanum+Gothic|Noto+Serif+TC" rel="stylesheet">
     <style>
         span {
             font-weight: bold;
         }
         body {
-            font-family: 'Charm',cursive;
-            background-image: url("img/dark-grey-terrazzo.png");
+            font-family: 'Indie Flower', sans-serif;
+            background-image: url("img/aerial-view-architecture-buildings-248867.jpg");
+            background-size: cover;
+            background-position: center;
+            padding-bottom: 50vw;
             color: white;
             box-sizing: border-box;
+            align-content: center;
         }
         footer {
             float: right;
@@ -27,15 +30,18 @@
             text-align: center;
             width: 20%;
             display: inline-block;
+            margin-top: 2em;
         }
         .card:hover {
-            box-shadow: 0 8px 16px 0 teal;
+            box-shadow: 0 8px 16px 0 white;
+            text-shadow: 5px 5px 10px black;
         }
         .header {
             text-align: center;
         }
         .header:hover {
-            color: teal;
+            transition: 0.4s;
+            text-shadow: 5px 5px 10px black;
         }
         #map-canvas {
             margin-top: 20px;
@@ -51,6 +57,8 @@
     <div id="main"></div>
     <div id="map"></div>
     <div id="map-canvas"></div>
+    <input type="text" id="address">
+    <button id="locate">Locate</button>
     <footer><p>by Allen Justin Blanco</p></footer>
 </div>
 <script src="js/jquery-2.2.4.js"></script>
@@ -63,7 +71,7 @@
         }).done(function(data) {
             $('#header').append('<h1>' + data.city.name + '</h1><h2>Five Day Forecast</h2>');
             for(var i = 0; i < data.list.length; i += 8){
-                $('#main').append('<div class="card">' + '<h3>Day ' + ((i/8)+1) + '</h3><div>' + data.list[i].main.temp_max + '°/' + data.list[i].main.temp_min + '°</div>' + '<div>' + data.list[i].weather[0].description + '</div><div><span>Humidity</span>: ' + data.list[i].main.humidity + '</div><div><span>Wind</span>: ' + data.list[i].wind.speed + '</div><div><span>Pressure</span>: ' + data.list[i].main.pressure + '</div></div>');
+                $('#main').append('<div class="card">' + '<h3>Day ' + ((i/8)+1) + '</h3><h2>' + data.list[i].main.temp_max + '°/' + data.list[i].main.temp_min + '°</h2>' + '<div>' + data.list[i].weather[0].description + '</div><div><span>Humidity</span>: ' + data.list[i].main.humidity + '</div><div><span>Wind</span>: ' + data.list[i].wind.speed + '</div><div><span>Pressure</span>: ' + data.list[i].main.pressure + '</div><br></div>');
             }
             console.log(data);
             $('.container').fadeIn(3000);
@@ -83,20 +91,19 @@
                     lng: data.city.coord.lon
                 },
                 map: map,
-                title: data.city.name
+                text: data.city.name
             });
             // Create a new infoWindow object with content
             var infowindow = new google.maps.InfoWindow({
-                content: 'rosella at the rand',
-                maxWidth: 400
+                content: data.city.name,
+                maxWidth: 400,
+                animation: google.maps.Animation.DROP,
+                position: {
+                    lat: data.city.coord.lat,
+                    lng: data.city.coord.lon
+                },
             });
-            // Open the window using our map and marker
-            google.maps.event.addListener(tempMarker, 'click', function(){
-                infowindow.open(map, tempMarker);
-            });
-            google.maps.event.addListener(map, 'click', function(){
-                infowindow.close();
-            });
+
             var btn = document.getElementById('locate');
             btn.addEventListener('click', function(){
                 var inputAddress = document.getElementById('address').value;
@@ -109,7 +116,7 @@
                             position: results[0].geometry.location,
                             map: map
                         });
-                        // Create a new infoWindow object with content
+
                         var infowindow = new google.maps.InfoWindow({
                             content: inputAddress
                         });
