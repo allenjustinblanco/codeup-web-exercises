@@ -54,8 +54,6 @@
     <div id="main"></div>
     <div id="map"></div>
     <div id="map-canvas"></div>
-    <input type="text" id="address">
-    <button id="locate">Search</button>
     <footer><p>by Allen Justin Blanco</p></footer>
 </div>
 <script src="js/jquery-2.2.4.js"></script>
@@ -67,12 +65,12 @@
             lat: 29.4241,
             lon: -98.4936
         }).done(function(data) {
-            $('#header').append('<h1>' + data.city.name + '</h1><h2>Five Day Forecast</h2>');
+            $('#header').append('<div class="card"><h1>' + data.city.name + '</h1><h2>Five Day Forecast</h2></div>');
             for(var i = 0; i < data.list.length; i += 8){
                 $('#main').append('<div class="card">' + '<h3>Day ' + ((i/8)+1) + '</h3><h2>' + data.list[i].main.temp_max + '°/' + data.list[i].main.temp_min + '°</h2>' + '<div>' + data.list[i].weather[0].description + '</div><div><span>Humidity</span>: ' + data.list[i].main.humidity + '</div><div><span>Wind</span>: ' + data.list[i].wind.speed + '</div><div><span>Pressure</span>: ' + data.list[i].main.pressure + '</div><br></div>');
             }
             console.log(data);
-            $('.container').fadeIn(3000);
+            $('.container').fadeIn(2000);
             var mapOptions = {
                 zoom: 8,
                 center: {
@@ -80,8 +78,8 @@
                     lng: data.city.coord.lon
                 }
             };
-            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
             var geocoder = new google.maps.Geocoder();
+            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
             var tempMarker = new google.maps.Marker({
                 animation: google.maps.Animation.DROP,
                 position: {
