@@ -9,11 +9,8 @@
             font-weight: bold;
         }
         body {
-            font-family: 'Indie Flower', sans-serif;
-            background-image: url("img/aerial-view-architecture-buildings-248867.jpg");
-            background-size: cover;
-            background-position: center;
-            padding-bottom: 50vw;
+            font-family: 'Dosis', sans-serif;
+            background-image: url("img/prism.png");
             color: white;
             box-sizing: border-box;
             align-content: center;
@@ -47,7 +44,7 @@
             margin-top: 20px;
             background-color: #3B94D9;
             width: 100%;
-            height: 550px;
+            height: 500px;
         }
     </style>
 </head>
@@ -58,7 +55,7 @@
     <div id="map"></div>
     <div id="map-canvas"></div>
     <input type="text" id="address">
-    <button id="locate">Locate</button>
+    <button id="locate">Search</button>
     <footer><p>by Allen Justin Blanco</p></footer>
 </div>
 <script src="js/jquery-2.2.4.js"></script>
@@ -67,7 +64,8 @@
     $(document).ready(function(){
         $.get("http://api.openweathermap.org/data/2.5/forecast?units=imperial", {
             APPID: "5470297cbd9751ca9d6de1c1f2fe68bf",
-            q: "San Antonio, US"
+            lat: 29.4241,
+            lon: -98.4936
         }).done(function(data) {
             $('#header').append('<h1>' + data.city.name + '</h1><h2>Five Day Forecast</h2>');
             for(var i = 0; i < data.list.length; i += 8){
@@ -76,7 +74,7 @@
             console.log(data);
             $('.container').fadeIn(3000);
             var mapOptions = {
-                zoom: 7,
+                zoom: 8,
                 center: {
                     lat: data.city.coord.lat,
                     lng: data.city.coord.lon
@@ -93,43 +91,16 @@
                 map: map,
                 text: data.city.name
             });
-            // Create a new infoWindow object with content
-            var infowindow = new google.maps.InfoWindow({
-                content: data.city.name,
-                maxWidth: 400,
-                animation: google.maps.Animation.DROP,
-                position: {
-                    lat: data.city.coord.lat,
-                    lng: data.city.coord.lon
-                },
+            google.maps.event.addListener(map, "click", function (event) {
+                var latitude = event.latLng.lat();
+                var longitude = event.latLng.lng();
+                console.log( latitude + ', ' + longitude );
+                data.city.coord.lat = latitude;
+                data.city.coord.lon = longitude;
+                // Centers Map when clicked
+                map.panTo(new google.maps.LatLng(latitude,longitude));
             });
-
             var btn = document.getElementById('locate');
-            btn.addEventListener('click', function(){
-                var inputAddress = document.getElementById('address').value;
-                geocoder.geocode({ "address": inputAddress }, function(results, status) {
-                    if (status === google.maps.GeocoderStatus.OK) {
-                        console.log(results);
-                        map.setCenter(results[0].geometry.location);
-                        var tempMarker = new google.maps.Marker({
-                            animation: google.maps.Animation.DROP,
-                            position: results[0].geometry.location,
-                            map: map
-                        });
-
-                        var infowindow = new google.maps.InfoWindow({
-                            content: inputAddress
-                        });
-                        mapOptions = {
-                            zoom: 20,
-                        };
-                        infowindow.open(map, tempMarker);
-                    } else {
-                        // Show an error message with the status if our request fails
-                        alert("Geocoding was not successful - STATUS: " + status);
-                    }
-                });
-            });
         });
     });
 </script>
