@@ -37,6 +37,12 @@
         .header:hover {
             color: teal;
         }
+        #map-canvas {
+            margin-top: 20px;
+            background-color: #3B94D9;
+            width: 100%;
+            height: 550px;
+        }
     </style>
 </head>
 <body>
@@ -44,18 +50,79 @@
     <div id="header" class="header"></div>
     <div id="main"></div>
     <div id="map"></div>
+    <div id="map-canvas"></div>
     <footer><p>by Allen Justin Blanco</p></footer>
 </div>
 <script src="js/jquery-2.2.4.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKqkkLfiKJlJFmSG2DINLW7REOiMOJaqY"></script>
 <script>
     $(document).ready(function(){
-        $.get("http://api.openweathermap.org/data/2.5/forecast?zip=78251,us&units=imperial&APPID=5470297cbd9751ca9d6de1c1f2fe68bf").done(function(data) {
+        $.get("http://api.openweathermap.org/data/2.5/forecast?units=imperial", {
+            APPID: "5470297cbd9751ca9d6de1c1f2fe68bf",
+            q: "San Antonio, US"
+        }).done(function(data) {
             $('#header').append('<h1>' + data.city.name + '</h1><h2>Five Day Forecast</h2>');
             for(var i = 0; i < data.list.length; i += 8){
-                $('#main').append('<div class="card">' + '<h3>Day ' + ((i/8)+1) + '</h3><div>' + data.list[i].main.temp_min + '°/' + data.list[i].main.temp_max + '°</div>' + '<div>' + data.list[i].weather[0].description + '</div><div><span>Humidity</span>: ' + data.list[i].main.humidity + '</div><div><span>Wind</span>: ' + data.list[i].wind.speed + '</div><div><span>Pressure</span>: ' + data.list[i].main.pressure + '</div></div>');
+                $('#main').append('<div class="card">' + '<h3>Day ' + ((i/8)+1) + '</h3><div>' + data.list[i].main.temp_max + '°/' + data.list[i].main.temp_min + '°</div>' + '<div>' + data.list[i].weather[0].description + '</div><div><span>Humidity</span>: ' + data.list[i].main.humidity + '</div><div><span>Wind</span>: ' + data.list[i].wind.speed + '</div><div><span>Pressure</span>: ' + data.list[i].main.pressure + '</div></div>');
             }
             console.log(data);
-            $('.container').fadeIn(4000)
+            $('.container').fadeIn(3000);
+            var mapOptions = {
+                zoom: 7,
+                center: {
+                    lat: data.city.coord.lat,
+                    lng: data.city.coord.lon
+                }
+            };
+            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+            var geocoder = new google.maps.Geocoder();
+            var tempMarker = new google.maps.Marker({
+                animation: google.maps.Animation.DROP,
+                position: {
+                    lat: data.city.coord.lat,
+                    lng: data.city.coord.lon
+                },
+                map: map,
+                title: data.city.name
+            });
+            // Create a new infoWindow object with content
+            var infowindow = new google.maps.InfoWindow({
+                content: 'rosella at the rand',
+                maxWidth: 400
+            });
+            // Open the window using our map and marker
+            google.maps.event.addListener(tempMarker, 'click', function(){
+                infowindow.open(map, tempMarker);
+            });
+            google.maps.event.addListener(map, 'click', function(){
+                infowindow.close();
+            });
+            var btn = document.getElementById('locate');
+            btn.addEventListener('click', function(){
+                var inputAddress = document.getElementById('address').value;
+                geocoder.geocode({ "address": inputAddress }, function(results, status) {
+                    if (status === google.maps.GeocoderStatus.OK) {
+                        console.log(results);
+                        map.setCenter(results[0].geometry.location);
+                        var tempMarker = new google.maps.Marker({
+                            animation: google.maps.Animation.DROP,
+                            position: results[0].geometry.location,
+                            map: map
+                        });
+                        // Create a new infoWindow object with content
+                        var infowindow = new google.maps.InfoWindow({
+                            content: inputAddress
+                        });
+                        mapOptions = {
+                            zoom: 20,
+                        };
+                        infowindow.open(map, tempMarker);
+                    } else {
+                        // Show an error message with the status if our request fails
+                        alert("Geocoding was not successful - STATUS: " + status);
+                    }
+                });
+            });
         });
     });
 </script>
