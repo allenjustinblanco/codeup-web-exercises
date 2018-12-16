@@ -2,16 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Weather map</title>
+    <title>Weather Map</title>
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
+    <style>
+        span {
+            font-weight: bold;
+        }
+        * {
+            font-family: 'ZCOOL QingKe HuangYou', cursive;
+            background-color: black;
+            color: white;
+        }
+    </style>
 </head>
 <body>
+<div id="header"></div>
+<div id="main"></div>
 <script src="js/jquery-2.2.4.js"></script>
 <script>
-$(document).ready(function(){
-    $.ajax('http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=5470297cbd9751ca9d6de1c1f2fe68bf\n').done(function(){
-        
-    })
-})
+    $.get("http://api.openweathermap.org/data/2.5/forecast?zip=78251,us&units=imperial&APPID=5470297cbd9751ca9d6de1c1f2fe68bf", {
+        APPID: "5470297cbd9751ca9d6de1c1f2fe68bf",
+        q:     "San Antonio, US"
+    }).done(function(data) {
+        $('#header').append('<h1>' + data.city.name + '</h1><h2>Five Day Forecast</h2>');
+        for(var i = 0; i < data.list.length; i += 8){
+            $('#main').append('<div>Day ' + ((i/8)+1) + '</div><div>' + data.list[i].main.temp_min + '°/' + data.list[i].main.temp_max + '°</div>' + '<div>' + data.list[i].weather[0].description + '</div><div><span>Humidity</span>: ' + data.list[i].main.humidity + '</div><div>Wind:' + data.list[i].wind.speed + '</div><div>Pressure: ' + data.list[i].main.pressure + '</div><br>');
+        }
+        console.log(data);
+    });
 </script>
 </body>
 </html>
