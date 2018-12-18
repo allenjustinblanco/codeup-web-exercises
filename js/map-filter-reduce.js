@@ -35,14 +35,10 @@ const users = [
         yearsOfExperience: 9
     }
 ];
-const arrayOfUserLanguages = users.filter(function(n){
-    return n.languages;
-});
-/*
- const multLang = users.filter(users => users.languages.length >= 3);
-*/
+
+const arrayOfUserLanguages = users.filter(users => users.languages.length >= 3);
 const usersEmails = users.map(function(n){
-   return n.email
+   return n.email;
 });
 const totalYearsOfExperience = users.reduce((total, user) => {
         return total + user.yearsOfExperience;
@@ -54,7 +50,8 @@ const longestEmail = users.reduce((total, user) => {
 }, '');
 const userNames = users.reduce((total, user) => {
     return total + user.name;
-});
+}, '');
+
 console.log(averageYearsOfExperience);
 console.log(totalYearsOfExperience);
 console.log(arrayOfUserLanguages);
