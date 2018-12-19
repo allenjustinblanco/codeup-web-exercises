@@ -37,21 +37,23 @@ const users = [
 ];
 
 const arrayOfUserLanguages = users.filter(users => users.languages.length >= 3);
-const usersEmails = users.map(function(n){
-   return n.email;
-});
+const usersEmails = users.map((n) => n.email);
 const totalYearsOfExperience = users.reduce((total, user) => {
         return total + user.yearsOfExperience;
 }, 0);
 const numberOfUsers = users.length;
 const averageYearsOfExperience = totalYearsOfExperience/numberOfUsers;
-const longestEmail = users.reduce((total, user) => {
-   return user.email.length;
+const longestEmail = users.reduce((longestEmailCurrently, user) => {
+   if(user.email.length > longestEmailCurrently.length){
+       return user.email;
+   }
+   return longestEmailCurrently;
 }, '');
 const userNames = users.reduce((total, user) => {
-    return total + user.name;
-}, '');
-
+    debugger;
+    return `${total} ${user.name}`
+}, 'Your instructors are: ');
+console.log(longestEmail);
 console.log(averageYearsOfExperience);
 console.log(totalYearsOfExperience);
 console.log(arrayOfUserLanguages);
