@@ -1,31 +1,30 @@
-const wait = new Promise(function (resolve, reject) {
-    setTimeout(function () {
-        resolve('It has been resolved!');
-    }, 1000);
-});
+const wait = delay => new Promise((resolve, reject) => setTimeout(resolve, delay));
 
-wait.then(function (string) {
-    console.log(string);
-});
+wait(1000).then(() => console.log('You\'ll see this after 1 second'));
+wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
 
 const githubAPIToken = '7gd4beg9439418gd3d8fccbd596g98g446:118g5';
 
 const fetchOptions = {headers: {'Authorization': `token ${githubAPIToken}`}};
 
-const githubfetch = fetch('https://api.github.com/users/allenjustinblanco/events', fetchOptions)
-    .then((response) => {
-        const jsonResponse = response.json();
-        return jsonResponse;
-    })
-    .then((response) => {
-        return response[0]
-    })
-    .then((response) => {
-        return response.created_at;
-    });
-console.log(githubfetch);
+const githubfetch = username => fetch(`https://api.github.com/users/${username}/events`, fetchOptions)
+    .then((response) => response.json())
+    .then((response) => response[0])
+    .then((response) => response.created_at)
+    .then((response) => console.log(response));
 
-//function to decrypt githubAPIkey
+const encrypt = (input) => {
+    if(typeof(input) != "string"){
+        return undefined;
+    }
+    let shift = new TextEncoder("utf-8").encode(input);
+    for(let i = 0; i < shift.length; i++){
+        shift[i] += 1;
+    }
+    const result = new TextDecoder("utf-8").decode(shift);
+    return result;
+};
+
 const decrypt = (input) => {
     if(typeof(input) != "string"){
         return undefined;
@@ -38,4 +37,3 @@ const decrypt = (input) => {
     const result = new TextDecoder("utf-8").decode(shift);
     return result;
 };
-
